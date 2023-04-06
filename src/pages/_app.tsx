@@ -6,6 +6,7 @@ import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Notifications } from '@mantine/notifications';
+import { theme } from '@/styles/theme';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 	getLayout?: (page: ReactElement) => ReactNode;
@@ -27,7 +28,7 @@ export default function _app({
 	return (
 		<>
 			<QueryClientProvider client={queryClient}>
-				<MantineProvider withCSSVariables withGlobalStyles withNormalizeCSS>
+				<MantineProvider withCSSVariables withGlobalStyles withNormalizeCSS theme={theme}>
 					<ModalsProvider>
 						{getLayout(<Component {...pageProps} key={route} />)}
 					</ModalsProvider>

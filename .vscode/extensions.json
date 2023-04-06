@@ -1,0 +1,15 @@
+{
+	"recommendations": [
+		"formulahendry.auto-complete-tag",
+		"aaron-bond.better-comments",
+		"streetsidesoftware.code-spell-checker",
+		"mikestead.dotenv",
+		"EditorConfig.EditorConfig",
+		"usernamehw.errorlens",
+		"dbaeumer.vscode-eslint",
+		"yzhang.markdown-all-in-one",
+		"DavidAnson.vscode-markdownlint",
+		"esbenp.prettier-vscode",
+		"meganrogge.template-string-converter"
+	],
+}

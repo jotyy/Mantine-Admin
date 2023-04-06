@@ -1,0 +1,55 @@
+{
+	"enabled": true,
+	"schedule": ["before 3am on Monday"],
+	"extends": [
+		"config:base",
+		":pinVersions",
+		":separateMultipleMajorReleases",
+		":combinePatchMinorReleases",
+		":automergePatch",
+		":automergeMinor",
+		":pinSkipCi",
+		"group:allNonMajor"
+	],
+	"assignees": ["gmatthewsfeuer"],
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"automerge": true
+		},
+		{
+			"matchDepTypes": ["devDependencies"],
+			"automerge": true
+		},
+		{
+      "extends": "monorepo:nextjs",
+      "groupName": "nextjs monorepo"
+    },
+		{
+      "extends": "monorepo:chakra-ui",
+      "groupName": "chakra-ui monorepo"
+    },
+		{
+      "extends": "monorepo:emotion",
+      "groupName": "emotion monorepo"
+    },
+		{
+      "extends": "packages:linters",
+      "groupName": "linters"
+    },
+		{
+      "extends": "packages:test",
+      "groupName": "test packages"
+    },
+		{
+      "extends": "monorepo:typescript-eslint",
+      "groupName": "typescript-eslint monorepo"
+    },
+		{
+      "groupName": "definitelyTyped",
+      "matchPackagePrefixes": [
+        "@types/"
+      ]
+    }
+	]
+}

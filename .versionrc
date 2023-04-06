@@ -1,0 +1,39 @@
+{
+	"types": [
+		{
+			"type": "feat",
+			"section": "Features"
+		},
+		{
+			"type": "fix",
+			"section": "Bug Fixes"
+		},
+		{
+			"type": "refactor",
+			"section": "Improvements"
+		},
+		{
+			"type": "style",
+			"section": "Styles"
+		},
+		{
+			"type": "docs",
+			"section": "Documentation"
+		},
+		{
+			"type": "chore",
+			"section": "Chores",
+			"hidden": true
+		},
+		{
+			"type": "test",
+			"section": "Tests",
+			"hidden": true
+		},
+		{
+			"type": "revert",
+			"section": "Reverts",
+			"hidden": true
+		}
+	]
+}

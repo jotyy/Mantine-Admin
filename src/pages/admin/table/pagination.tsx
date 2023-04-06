@@ -1,9 +1,10 @@
 import { PageContainer } from '@/components/PageContainer';
 import { AdminLayout } from '@/layouts/AdminLayout';
 import { NextPageWithLayout } from '@/pages/_app';
+import { getTickersServerSide } from '@/pages/api/tickers';
 import { useTickers } from '@/services/ticker';
-import { Ticker } from '@/types/ticker-response';
-import { ActionIcon, Badge, Space, Text, Tooltip } from '@mantine/core';
+import { Ticker, TickerApiResponse } from '@/types/ticker-response';
+import { ActionIcon, Badge, Tooltip } from '@mantine/core';
 import { IconRefresh } from '@tabler/icons-react';
 import {
 	MRT_ColumnDef,
@@ -11,19 +12,32 @@ import {
 	MantineReactTable,
 } from 'mantine-react-table';
 import { MRT_Localization_ZH_HANS } from 'mantine-react-table/locales/zh-Hans';
+import { GetStaticProps } from 'next';
 
 import { useMemo, useState } from 'react';
 
-const PaginationTable: NextPageWithLayout = () => {
+export const getStaticProps: GetStaticProps = () => {
+	const tickerData = getTickersServerSide();
+	return { props: { tickerData } };
+};
+
+interface Props {
+	tickerData: TickerApiResponse;
+}
+
+const PaginationTable: NextPageWithLayout<Props> = ({ tickerData }) => {
 	const [pagination, setPagination] = useState<MRT_PaginationState>({
 		pageIndex: 0,
 		pageSize: 10,
 	});
 
-	const { data, isError, isFetching, isLoading, refetch } = useTickers({
-		pageIndex: pagination.pageIndex,
-		pageSize: pagination.pageSize,
-	});
+	const { data, isError, isFetching, isLoading, refetch } = useTickers(
+		{
+			pageIndex: pagination.pageIndex,
+			pageSize: pagination.pageSize,
+		},
+		tickerData
+	);
 
 	const columns = useMemo<MRT_ColumnDef<Ticker>[]>(
 		() => [

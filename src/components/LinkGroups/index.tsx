@@ -37,7 +37,6 @@ interface LinksGroupProps {
 
 export function LinksGroup({ icon: Icon, label, link, links }: LinksGroupProps) {
 	const router = useRouter();
-	console.log(router.pathname, link);
 	const { classes } = useStyles();
 	const hasLinks = Array.isArray(links);
 	const items = (hasLinks ? links : []).map(item => (

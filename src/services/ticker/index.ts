@@ -7,19 +7,16 @@ type Params = {
 	pageSize: number;
 };
 
-export const useTickers = ({ pageIndex, pageSize }: Params) =>
+export const getTickers = ({ pageIndex, pageSize }: Params) =>
+	fetcher<TickerApiResponse>(`/api/tickers?page=${pageIndex}&limit=${pageSize}`);
+
+export const useTickers = (
+	{ pageIndex, pageSize }: Params,
+	initialData?: TickerApiResponse
+) =>
 	useQuery({
-		queryKey: [
-			'ticker-data',
-			pageIndex, //refetch when pagination.pageIndex changes
-			pageSize, //refetch when pagination.pageSize changes
-		],
-		queryFn: async () => {
-			const data = await fetcher<TickerApiResponse>(
-				`/api/tickers?page=${pageIndex}&limit=${pageSize}`
-			);
-			console.log(data);
-			return data;
-		},
+		queryKey: ['ticker-data', pageIndex, pageSize],
+		queryFn: () => getTickers({ pageIndex, pageSize }),
 		keepPreviousData: true,
+		initialData,
 	});

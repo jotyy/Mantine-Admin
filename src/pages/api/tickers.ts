@@ -3196,13 +3196,18 @@ const data = {
 	],
 };
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-	const { page, limit } = req.query;
-	const startIndex = Number(page) * Number(limit);
-	const endIndex = (Number(page) + 1) * Number(limit);
+export const getTickersServerSide = (pageIndex: number = 0, pageSize: number = 10) => {
+	const startIndex = pageIndex * pageSize;
+	const endIndex = (pageIndex + 1) * pageSize;
 	const tickers = data.tickers;
-	return res.status(200).json({
+	return {
 		total: tickers.length,
 		list: tickers.slice(startIndex, endIndex),
-	});
+	};
+};
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+	const { page, limit } = req.query;
+	const result = getTickersServerSide(+page, +limit);
+	return res.status(200).json(result);
 }

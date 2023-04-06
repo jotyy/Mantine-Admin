@@ -54,6 +54,8 @@
 		"@tabler/icons-react": "^2.13.1",
 		"@tanstack/react-query": "4.28.0",
 		"@tanstack/react-table": "^8.8.5",
+		"axios": "^1.3.5",
+		"cross-fetch": "^3.1.5",
 		"dayjs": "^1.11.7",
 		"framer-motion": "10.10.0",
 		"jotai": "^2.0.3",

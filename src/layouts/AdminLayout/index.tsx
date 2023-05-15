@@ -33,7 +33,7 @@ export function AdminLayout({ children }: Props) {
 			footer={
 				<Footer height={50} p="md">
 					<Text w="full" size="sm" align="center" color="gray">
-						CopyRight © 2023 晶格实验室
+						CopyRight © 2023 Jotyy
 					</Text>
 				</Footer>
 			}

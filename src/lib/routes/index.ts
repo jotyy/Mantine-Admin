@@ -9,26 +9,26 @@ import {
 } from '@tabler/icons-react';
 
 export const routes: NavItem[] = [
-	{ label: 'Dashboard', icon: IconDashboard, link: '/admin/dashboard' },
+	{ label: 'Dashboard', icon: IconDashboard, link: '/dashboard' },
 	{
 		label: 'Forms',
 		icon: IconForms,
-		link: '/admin/form',
+		link: '/form',
 		links: [
-			{ label: 'Common', link: '/admin/form/common' },
-			{ label: 'Upload', link: '/admin/form/upload' },
+			{ label: 'Common', link: '/form/common' },
+			{ label: 'Upload', link: '/form/upload' },
 		],
 	},
 	{
 		label: 'Tables',
 		icon: IconTable,
-		link: '/admin/table',
+		link: '/table',
 		links: [
-			{ label: 'Simple', link: '/admin/table/simple' },
-			{ label: 'Pagination', link: '/admin/table/pagination' },
+			{ label: 'Simple', link: '/table/simple' },
+			{ label: 'Pagination', link: '/table/pagination' },
 		],
 	},
-	{ label: 'Charts', icon: IconChartArcs, link: '/admin/chart' },
+	{ label: 'Charts', icon: IconChartArcs, link: '/chart' },
 	{
 		label: 'Authenication',
 		icon: IconLock,

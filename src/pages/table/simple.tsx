@@ -14,7 +14,7 @@ type Person = {
 	state: string;
 };
 
-//nested data is ok, see accessorKeys in ColumnDef below
+// nested data is ok, see accessorKeys in ColumnDef below
 const data: Person[] = [
 	{
 		name: {
@@ -92,8 +92,12 @@ const SimpleTable: NextPageWithLayout = () => {
 	);
 
 	return (
-		<PageContainer title="Simple Table" fluid>
-			<MantineReactTable columns={columns} data={data} />
+		<PageContainer title="Simple Table">
+			<MantineReactTable
+				columns={columns}
+				data={data}
+				mantinePaperProps={{ shadow: '0' }}
+			/>
 		</PageContainer>
 	);
 };

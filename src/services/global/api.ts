@@ -1,7 +1,16 @@
-import fetch from 'cross-fetch';
+import axios, { AxiosResponse } from 'axios';
 
-export const fetcher = async <Data>(url: RequestInfo | URL, init?: RequestInit) => {
-	const response = await fetch(url, init);
-	const data = await response.json();
-	return data as Data;
+export const api = axios.create({
+	baseURL: 'https://mainnet-api.explorer.nervos.org',
+});
+
+export const fetcher = async <Data>(url: string) => {
+	const response = await api.request<Data, AxiosResponse<Data>>({
+		url,
+		headers: {
+			'Content-Type': 'application/vnd.api+json',
+		},
+	});
+
+	return response.data as Data;
 };

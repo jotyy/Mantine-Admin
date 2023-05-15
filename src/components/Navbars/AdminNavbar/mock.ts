@@ -10,25 +10,25 @@ import {
 } from '@tabler/icons-react';
 
 export const mockNested: NavItem[] = [
-	{ label: 'Dashboard', icon: IconDashboard, link: '/admin/dashboard' },
+	{ label: 'Dashboard', icon: IconDashboard, link: '/dashboard' },
 	{
 		label: 'Forms',
 		icon: IconForms,
 		initiallyOpened: true,
 		links: [
-			{ label: 'Common', link: '/admin/form/common' },
-			{ label: 'Upload', link: '/admin/form/upload' },
+			{ label: 'Common', link: '/form/common' },
+			{ label: 'Upload', link: '/form/upload' },
 		],
 	},
 	{
 		label: 'Tables',
 		icon: IconTable,
 		links: [
-			{ label: 'Simple', link: '/admin/table/simple' },
-			{ label: 'Pagination', link: '/admin/table/pagination' },
+			{ label: 'Simple', link: '/table/simple' },
+			{ label: 'Pagination', link: '/table/pagination' },
 		],
 	},
-	{ label: 'Charts', icon: IconChartArcs, link: '/admin/chart' },
+	{ label: 'Charts', icon: IconChartArcs, link: '/chart' },
 	{
 		label: 'Authenication',
 		icon: IconLock,

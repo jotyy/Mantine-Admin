@@ -1,9 +1,8 @@
 import { PageContainer } from '@/components/PageContainer';
 import { AdminLayout } from '@/layouts/AdminLayout';
 import { NextPageWithLayout } from '@/pages/_app';
-import { getTickersServerSide } from '@/pages/api/tickers';
-import { useTickers } from '@/services/ticker';
-import { Ticker, TickerApiResponse } from '@/types/ticker-response';
+import { useBlocks } from '@/services/ticker';
+import { Data } from '@/types/ticker-response';
 import { ActionIcon, Badge, Tooltip } from '@mantine/core';
 import { IconRefresh } from '@tabler/icons-react';
 import {
@@ -16,49 +15,37 @@ import { GetStaticProps } from 'next';
 
 import { useMemo, useState } from 'react';
 
-export const getStaticProps: GetStaticProps = () => {
-	const tickerData = getTickersServerSide();
-	return { props: { tickerData } };
-};
-
-interface Props {
-	tickerData: TickerApiResponse;
-}
-
-const PaginationTable: NextPageWithLayout<Props> = ({ tickerData }) => {
+const PaginationTable: NextPageWithLayout = () => {
 	const [pagination, setPagination] = useState<MRT_PaginationState>({
 		pageIndex: 0,
 		pageSize: 10,
 	});
 
-	const { data, isError, isFetching, isLoading, refetch } = useTickers(
-		{
-			pageIndex: pagination.pageIndex,
-			pageSize: pagination.pageSize,
-		},
-		tickerData
-	);
+	const { data, isError, isFetching, isLoading, refetch } = useBlocks({
+		pageIndex: pagination.pageIndex,
+		pageSize: pagination.pageSize,
+	});
 
-	const columns = useMemo<MRT_ColumnDef<Ticker>[]>(
+	const columns = useMemo<MRT_ColumnDef<Data>[]>(
 		() => [
 			{
-				accessorKey: 'market.name',
-				header: 'Market',
+				accessorKey: 'id',
+				header: 'ID',
 			},
 			{
-				accessorKey: 'volume',
-				header: 'Volume',
+				accessorKey: 'attributes.transaction_hash',
+				header: 'Hash',
 			},
 			{
-				accessorKey: 'trust_score',
-				header: 'Score',
+				accessorKey: 'attributes.capacity_involved',
+				header: 'Capacity',
 				Cell: ({ cell }) => {
 					const value = cell.getValue<string>();
 					return <Badge color={value}>{value}</Badge>;
 				},
 			},
 			{
-				accessorKey: 'timestamp',
+				accessorKey: 'attributes.block_timestamp',
 				header: 'Time',
 			},
 		],
@@ -66,10 +53,10 @@ const PaginationTable: NextPageWithLayout<Props> = ({ tickerData }) => {
 	);
 
 	return (
-		<PageContainer title="Pagination" fluid>
+		<PageContainer title="Pagination">
 			<MantineReactTable
 				columns={columns}
-				data={data?.list ?? []}
+				data={data?.data ?? []}
 				initialState={{ showColumnFilters: false, density: 'lg' }}
 				manualPagination
 				localization={MRT_Localization_ZH_HANS}
@@ -77,6 +64,7 @@ const PaginationTable: NextPageWithLayout<Props> = ({ tickerData }) => {
 				enableDensityToggle={false}
 				enableFullScreenToggle={false}
 				enableGlobalFilter={false}
+				mantinePaperProps={{ shadow: '0' }}
 				mantineToolbarAlertBannerProps={
 					isError
 						? {
@@ -93,7 +81,7 @@ const PaginationTable: NextPageWithLayout<Props> = ({ tickerData }) => {
 						</ActionIcon>
 					</Tooltip>
 				)}
-				rowCount={data?.total ?? 0}
+				rowCount={data?.meta.total ?? 0}
 				state={{
 					isLoading,
 					pagination,

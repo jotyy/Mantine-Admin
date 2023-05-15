@@ -8,8 +8,8 @@ import { modals } from '@mantine/modals';
 import { PageContainer } from '@/components/PageContainer';
 
 const schema = z.object({
-	name: z.string().min(1, { message: '用户名不可为空' }),
-	email: z.string().email('邮箱格式不正确'),
+	name: z.string().min(1, { message: 'Username is required' }),
+	email: z.string().email('Email is not valid'),
 });
 
 type User = z.infer<typeof schema>;
@@ -25,9 +25,9 @@ const SimpleForm: NextPageWithLayout = () => {
 
 	const onSubmit = (data: User) =>
 		modals.openConfirmModal({
-			title: '注册成功',
+			title: 'Register successfully',
 			children: <Text size="sm">{data.name}</Text>,
-			labels: { confirm: '确认', cancel: '取消' },
+			labels: { confirm: 'Confirm', cancel: 'Cancel' },
 			onConfirm: () => console.log('Confirmed'),
 		});
 

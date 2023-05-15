@@ -1,3 +1,5 @@
+'use client';
+
 import { RingProgress, Text, SimpleGrid, Paper, Center, Group } from '@mantine/core';
 import {
 	IconArrowUpRight,

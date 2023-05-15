@@ -1,5 +1,5 @@
 import { fetcher } from '@/services/global/api';
-import { TickerApiResponse } from '@/types/ticker-response';
+import { BlocksResponse } from '@/types/ticker-response';
 import { useQuery } from '@tanstack/react-query';
 
 type Params = {
@@ -7,16 +7,14 @@ type Params = {
 	pageSize: number;
 };
 
-export const getTickers = ({ pageIndex, pageSize }: Params) =>
-	fetcher<TickerApiResponse>(`/api/tickers?page=${pageIndex}&limit=${pageSize}`);
+export const getBlocks = ({ pageIndex, pageSize }: Params) =>
+	fetcher<BlocksResponse>(
+		`/api/v1/transactions?page=${pageIndex + 1}&page_size=${pageSize}`
+	);
 
-export const useTickers = (
-	{ pageIndex, pageSize }: Params,
-	initialData?: TickerApiResponse
-) =>
+export const useBlocks = ({ pageIndex, pageSize }: Params) =>
 	useQuery({
-		queryKey: ['ticker-data', pageIndex, pageSize],
-		queryFn: () => getTickers({ pageIndex, pageSize }),
+		queryKey: ['blocks', pageIndex, pageSize],
+		queryFn: () => getBlocks({ pageIndex, pageSize }),
 		keepPreviousData: true,
-		initialData,
 	});

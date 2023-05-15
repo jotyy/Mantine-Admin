@@ -10,15 +10,6 @@ module.exports = async _phase => {
 	const nextConfig = {
 		reactStrictMode: true,
 		swcMinify: true,
-		async redirects() {
-			return [
-				{
-					source: '/',
-					destination: '/admin/dashboard',
-					permanent: true,
-				},
-			];
-		},
 	};
 
 	return withPlugins(

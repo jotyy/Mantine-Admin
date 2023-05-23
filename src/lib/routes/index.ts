@@ -13,17 +13,17 @@ export const routes: NavItem[] = [
 	{
 		label: 'Forms',
 		icon: IconForms,
-		link: '/form',
+		link: '/dashboard/form',
 	},
 	{
 		label: 'Tables',
 		icon: IconTable,
-		link: '/table',
+		link: '/dashboard/table',
 	},
-	{ label: 'Charts', icon: IconChartArcs, link: '/chart' },
+	{ label: 'Charts', icon: IconChartArcs, link: '/dashboard/chart' },
 	{
 		label: 'Authenication',
 		icon: IconLock,
 	},
-	{ label: 'Settings', icon: IconSettings2, link: '/settings' },
+	{ label: 'Settings', icon: IconSettings2, link: '/dashboard/settings' },
 ];

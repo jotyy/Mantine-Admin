@@ -1,11 +1,9 @@
-import { AdminLayout } from '@/layouts/AdminLayout';
-import { NextPageWithLayout } from '@/pages/_app';
-import { Box, Button, Input, Space, Text, TextInput } from '@mantine/core';
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { modals } from '@mantine/modals';
 import { PageContainer } from '@/components/PageContainer';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Box, Button, Space, Text, TextInput } from '@mantine/core';
+import { modals } from '@mantine/modals';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 const schema = z.object({
 	name: z.string().min(1, { message: 'Username is required' }),
@@ -14,7 +12,7 @@ const schema = z.object({
 
 type User = z.infer<typeof schema>;
 
-const SimpleForm: NextPageWithLayout = () => {
+export const SimpleForm = () => {
 	const {
 		register,
 		handleSubmit,
@@ -32,7 +30,7 @@ const SimpleForm: NextPageWithLayout = () => {
 		});
 
 	return (
-		<PageContainer title="Common Form">
+		<>
 			<Box<'form'> sx={{ width: '300px' }}>
 				<Text<'h2'> component="h2" fw="bold" fz="lg">
 					Register
@@ -50,10 +48,6 @@ const SimpleForm: NextPageWithLayout = () => {
 				<Space h="md" />
 				<Button onClick={handleSubmit(onSubmit)}>Register</Button>
 			</Box>
-		</PageContainer>
+		</>
 	);
 };
-
-SimpleForm.getLayout = page => <AdminLayout>{page}</AdminLayout>;
-
-export default SimpleForm;

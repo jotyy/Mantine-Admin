@@ -1,8 +1,5 @@
-import React, { useMemo } from 'react';
 import { MantineReactTable, MRT_ColumnDef } from 'mantine-react-table';
-import { NextPageWithLayout } from '@/pages/_app';
-import { AdminLayout } from '@/layouts/AdminLayout';
-import { PageContainer } from '@/components/PageContainer';
+import { useMemo } from 'react';
 
 type Person = {
 	name: {
@@ -63,7 +60,7 @@ const data: Person[] = [
 	},
 ];
 
-const SimpleTable: NextPageWithLayout = () => {
+export const SimpleTable = () => {
 	//should be memoized or stable
 	const columns = useMemo<MRT_ColumnDef<Person>[]>(
 		() => [
@@ -92,16 +89,10 @@ const SimpleTable: NextPageWithLayout = () => {
 	);
 
 	return (
-		<PageContainer title="Simple Table">
-			<MantineReactTable
-				columns={columns}
-				data={data}
-				mantinePaperProps={{ shadow: '0' }}
-			/>
-		</PageContainer>
+		<MantineReactTable
+			columns={columns}
+			data={data}
+			mantinePaperProps={{ shadow: '0' }}
+		/>
 	);
 };
-
-SimpleTable.getLayout = page => <AdminLayout>{page}</AdminLayout>;
-
-export default SimpleTable;

@@ -21,9 +21,5 @@ export const routes: NavItem[] = [
 		link: '/dashboard/table',
 	},
 	{ label: 'Charts', icon: IconChartArcs, link: '/dashboard/chart' },
-	{
-		label: 'Authenication',
-		icon: IconLock,
-	},
 	{ label: 'Settings', icon: IconSettings2, link: '/dashboard/settings' },
 ];

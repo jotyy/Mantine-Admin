@@ -1,3 +1,6 @@
+'use client';
+
+import { Space, Stack, Title } from '@mantine/core';
 import { MantineReactTable, MRT_ColumnDef } from 'mantine-react-table';
 import { useMemo } from 'react';
 
@@ -89,10 +92,13 @@ export const SimpleTable = () => {
 	);
 
 	return (
-		<MantineReactTable
-			columns={columns}
-			data={data}
-			mantinePaperProps={{ shadow: '0' }}
-		/>
+		<Stack>
+			<Title order={5}>Simple</Title>
+			<MantineReactTable
+				columns={columns}
+				data={data}
+				mantinePaperProps={{ shadow: '0' }}
+			/>
+		</Stack>
 	);
 };

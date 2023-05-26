@@ -1,6 +1,7 @@
-import { PageContainer } from '@/components/PageContainer';
+'use client';
+
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Box, Button, Space, Text, TextInput } from '@mantine/core';
+import { Box, Button, Paper, Space, Text, TextInput } from '@mantine/core';
 import { modals } from '@mantine/modals';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -30,8 +31,8 @@ export const SimpleForm = () => {
 		});
 
 	return (
-		<>
-			<Box<'form'> sx={{ width: '300px' }}>
+		<Paper withBorder shadow="md" p="md" w="400px">
+			<Box<'form'>>
 				<Text<'h2'> component="h2" fw="bold" fz="lg">
 					Register
 				</Text>
@@ -40,14 +41,18 @@ export const SimpleForm = () => {
 					error={errors.name && errors.name.message}
 					{...register('name')}
 				/>
+				<Space h="sm" />
 				<TextInput
 					label="Email"
 					error={errors.email && errors.email.message}
 					{...register('email')}
 				/>
+				<Text component="p" color="gray" size="sm">
+					We will send you a confirmation email
+				</Text>
 				<Space h="md" />
 				<Button onClick={handleSubmit(onSubmit)}>Register</Button>
 			</Box>
-		</>
+		</Paper>
 	);
 };

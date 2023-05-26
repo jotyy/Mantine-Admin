@@ -1,12 +1,8 @@
-import {
-	Flex,
-	NavLink,
-	Text,
-	ThemeIcon,
-	UnstyledButton,
-	createStyles,
-} from '@mantine/core';
+'use client';
+
+import { NavLink, createStyles } from '@mantine/core';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/router';
 
 const useStyles = createStyles(theme => ({
@@ -30,15 +26,13 @@ interface SidebarItemProps {
 }
 
 export function SidebarItem({ icon: Icon, label, link = '/' }: SidebarItemProps) {
-	const router = useRouter();
+	const pathname = usePathname();
 	const { classes } = useStyles();
-	const isActive = router.pathname === link;
+	const isActive = pathname === link;
 
 	return (
-		<>
+		<Link href={link}>
 			<NavLink
-				component="a"
-				href={link}
 				active={isActive}
 				label={label}
 				childrenOffset={40}
@@ -46,6 +40,6 @@ export function SidebarItem({ icon: Icon, label, link = '/' }: SidebarItemProps)
 				icon={<Icon size="1.2rem" stroke={2} />}
 				className={classes.control}
 			/>
-		</>
+		</Link>
 	);
 }

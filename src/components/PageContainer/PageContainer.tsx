@@ -37,7 +37,7 @@ export const PageContainer: FC<PageContainerProps> = ({
 				</Breadcrumbs>
 			) : null}
 
-			<Title order={4} color={theme.colors.dark[6]}>
+			<Title order={3} color={theme.colors.dark[6]}>
 				{title}
 			</Title>
 

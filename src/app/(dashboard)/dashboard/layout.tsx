@@ -1,3 +1,5 @@
+'use client';
+
 import { AdminHeader } from '@/components/Headers/AdminHeader';
 import { AdminNavbar } from '@/components/Navbars/AdminNavbar';
 import { routes } from '@/lib/routes';
@@ -8,7 +10,7 @@ interface Props {
 	children: React.ReactNode;
 }
 
-export function AdminLayout({ children }: Props) {
+export default function DashboardLayout({ children }: Props) {
 	const [opened, setOpened] = useState(false);
 
 	return (

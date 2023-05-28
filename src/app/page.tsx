@@ -24,8 +24,8 @@ export default function Page() {
 			/>
 			<HeroSection />
 			<FeaturesSection
-				title="Integrate effortlessly with any technology stack"
-				description="Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when hunger drives it to try biting a Steel-type Pokémon."
+				title="Features"
+				description="This project is an experiment to see how a modern admin application, with features like auth, API routes, and static pages would work in Next.js 13 app dir."
 			/>
 		</LandingContainer>
 	);

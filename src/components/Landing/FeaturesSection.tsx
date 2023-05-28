@@ -1,52 +1,47 @@
 'use client';
 
 import {
-	ThemeIcon,
-	Text,
-	Title,
 	Container,
 	SimpleGrid,
+	Text,
+	ThemeIcon,
+	Title,
 	createStyles,
 	rem,
 } from '@mantine/core';
 import {
-	IconGauge,
-	IconCookie,
-	IconUser,
-	IconMessage2,
-	IconLock,
+	IconBrandMantine,
+	IconBrandNextjs,
+	IconBrandOauth,
+	IconBrandPlanetscale,
+	IconBrandReact,
 } from '@tabler/icons-react';
 
 export const MOCKDATA = [
 	{
-		icon: IconGauge,
-		title: 'Extreme performance',
-		description:
-			'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',
+		icon: IconBrandNextjs,
+		title: 'Next.js',
+		description: 'App dir, Routing, Layouts, Loading UI and API routes.',
 	},
 	{
-		icon: IconUser,
-		title: 'Privacy focused',
-		description:
-			'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',
+		icon: IconBrandReact,
+		title: 'React 18',
+		description: 'Server and Client Components. Use hook.',
 	},
 	{
-		icon: IconCookie,
-		title: 'No third parties',
-		description:
-			'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',
+		icon: IconBrandPlanetscale,
+		title: 'Database',
+		description: 'ORM using Prisma and deployed on PlanetScale.',
 	},
 	{
-		icon: IconLock,
-		title: 'Secure by default',
-		description:
-			'Although it still can’t fly, its jumping power is outstanding, in Alola the mushrooms on Paras don’t grow up quite right',
+		icon: IconBrandMantine,
+		title: 'Components',
+		description: 'UI components built using Mantine UI.',
 	},
 	{
-		icon: IconMessage2,
-		title: '24/7 Support',
-		description:
-			'Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail',
+		icon: IconBrandOauth,
+		title: 'Authentication',
+		description: 'Authentication using NextAuth.js and middlewares.',
 	},
 ];
 
@@ -59,10 +54,10 @@ interface FeatureProps {
 export function Feature({ icon: Icon, title, description }: FeatureProps) {
 	return (
 		<div>
-			<ThemeIcon variant="light" size={40} radius={40}>
-				<Icon size="1.1rem" stroke={1.5} />
+			<ThemeIcon variant="light" size={60} radius={60}>
+				<Icon size="2rem" stroke={1.5} />
 			</ThemeIcon>
-			<Text mt="sm" mb={7}>
+			<Text mt="sm" mb={7} fw="600">
 				{title}
 			</Text>
 			<Text size="sm" color="dimmed" sx={{ lineHeight: 1.6 }}>

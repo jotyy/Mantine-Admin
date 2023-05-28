@@ -1,5 +1,6 @@
 'use client';
 
+import { theme } from '@/styles/theme';
 import { CacheProvider } from '@emotion/react';
 import { MantineProvider, useEmotionCache } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
@@ -26,7 +27,7 @@ export default function RootStyleRegistry({ children }: { children: React.ReactN
 	return (
 		<QueryClientProvider client={queryClient}>
 			<CacheProvider value={cache}>
-				<MantineProvider withGlobalStyles withNormalizeCSS>
+				<MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
 					<ModalsProvider>{children}</ModalsProvider>
 					<Notifications />
 				</MantineProvider>

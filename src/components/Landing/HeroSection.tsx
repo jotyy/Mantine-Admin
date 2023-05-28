@@ -1,15 +1,11 @@
 'use client';
 
-import { createStyles, Container, Title, Text, Button, rem } from '@mantine/core';
+import { Button, Container, Group, Text, Title, createStyles, rem } from '@mantine/core';
+import { IconArrowRight, IconStar } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
 
 const useStyles = createStyles(theme => ({
 	root: {
-		backgroundColor: '#11284b',
-		backgroundSize: 'cover',
-		backgroundPosition: 'center',
-		backgroundImage:
-			'linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80)',
 		paddingTop: `calc(${theme.spacing.xl} * 3)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 3)`,
 	},
@@ -40,12 +36,10 @@ const useStyles = createStyles(theme => ({
 	},
 
 	title: {
-		color: theme.white,
 		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 		fontWeight: 900,
 		lineHeight: 1.05,
-		maxWidth: rem(500),
-		fontSize: rem(48),
+		fontSize: rem(64),
 
 		[theme.fn.smallerThan('md')]: {
 			maxWidth: '100%',
@@ -55,7 +49,6 @@ const useStyles = createStyles(theme => ({
 	},
 
 	description: {
-		color: theme.white,
 		opacity: 0.75,
 		maxWidth: rem(500),
 
@@ -65,8 +58,8 @@ const useStyles = createStyles(theme => ({
 	},
 
 	control: {
-		paddingLeft: rem(50),
-		paddingRight: rem(50),
+		paddingLeft: rem(40),
+		paddingRight: rem(40),
 		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 		fontSize: rem(22),
 
@@ -82,7 +75,7 @@ export function HeroSection() {
 
 	return (
 		<div className={classes.root}>
-			<Container size="lg">
+			<Container pt="sm" size="lg">
 				<div className={classes.inner}>
 					<div className={classes.content}>
 						<Title className={classes.title}>
@@ -91,11 +84,19 @@ export function HeroSection() {
 								component="span"
 								inherit
 								variant="gradient"
-								gradient={{ from: 'pink', to: 'yellow' }}
+								gradient={{ from: 'brand', to: 'cyan' }}
 							>
-								fully featured
+								Next.js 13
 							</Text>{' '}
-							React Admin dashboard
+							Admin template build with{' '}
+							<Text
+								component="span"
+								inherit
+								variant="gradient"
+								gradient={{ from: 'brand', to: 'cyan' }}
+							>
+								Mantine UI
+							</Text>
 						</Title>
 
 						<Text className={classes.description} mt={30}>
@@ -103,18 +104,32 @@ export function HeroSection() {
 							includes all components and hooks to cover you in any situation
 						</Text>
 
-						<Button
-							variant="gradient"
-							gradient={{ from: 'pink', to: 'yellow' }}
-							size="xl"
-							className={classes.control}
-							mt={40}
-							onClick={() => {
-								router.push('/auth/login');
-							}}
-						>
-							Get started
-						</Button>
+						<Group mt={40}>
+							<Button
+								variant="gradient"
+								gradient={{ from: 'brand', to: 'cyan' }}
+								size="lg"
+								className={classes.control}
+								onClick={() => {
+									router.push('/auth/login');
+								}}
+								rightIcon={<IconArrowRight />}
+							>
+								Get started
+							</Button>
+							<Button
+								variant="outline"
+								size="lg"
+								className={classes.control}
+								onClick={() => {
+									// open github
+									window.open('https://github.com/jotyy/mantine-admin');
+								}}
+								rightIcon={<IconStar />}
+							>
+								Give a Star
+							</Button>
+						</Group>
 					</div>
 				</div>
 			</Container>

@@ -2,7 +2,9 @@
 
 import {
 	Container,
+	Paper,
 	SimpleGrid,
+	Space,
 	Text,
 	ThemeIcon,
 	Title,
@@ -17,7 +19,7 @@ import {
 	IconBrandReact,
 } from '@tabler/icons-react';
 
-export const MOCKDATA = [
+export const featuresData = [
 	{
 		icon: IconBrandNextjs,
 		title: 'Next.js',
@@ -53,7 +55,7 @@ interface FeatureProps {
 
 export function Feature({ icon: Icon, title, description }: FeatureProps) {
 	return (
-		<div>
+		<Paper shadow="md" px="lg" py="sm" radius="md" withBorder>
 			<ThemeIcon variant="light" size={60} radius={60}>
 				<Icon size="2rem" stroke={1.5} />
 			</ThemeIcon>
@@ -63,7 +65,7 @@ export function Feature({ icon: Icon, title, description }: FeatureProps) {
 			<Text size="sm" color="dimmed" sx={{ lineHeight: 1.6 }}>
 				{description}
 			</Text>
-		</div>
+		</Paper>
 	);
 }
 
@@ -71,17 +73,21 @@ const useStyles = createStyles(theme => ({
 	wrapper: {
 		paddingTop: `calc(${theme.spacing.xl} * 4)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
 	},
 
 	title: {
 		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 		fontWeight: 900,
-		marginBottom: theme.spacing.md,
-		textAlign: 'center',
+		lineHeight: 1.05,
+		fontSize: rem(64),
 
-		[theme.fn.smallerThan('sm')]: {
-			fontSize: rem(28),
-			textAlign: 'left',
+		[theme.fn.smallerThan('md')]: {
+			maxWidth: '100%',
+			fontSize: rem(34),
+			lineHeight: 1.15,
 		},
 	},
 
@@ -103,7 +109,7 @@ interface FeaturesGridProps {
 export function FeaturesSection({
 	title,
 	description,
-	data = MOCKDATA,
+	data = featuresData,
 }: FeaturesGridProps) {
 	const { classes } = useStyles();
 	const features = data.map((feature, index) => <Feature {...feature} key={index} />);
@@ -111,6 +117,7 @@ export function FeaturesSection({
 	return (
 		<Container className={classes.wrapper}>
 			<Title className={classes.title}>{title}</Title>
+			<Space h="md" />
 
 			<Container size={560} p={0}>
 				<Text size="sm" className={classes.description}>
@@ -121,10 +128,10 @@ export function FeaturesSection({
 			<SimpleGrid
 				mt={60}
 				cols={3}
-				spacing={50}
+				spacing="xl"
 				breakpoints={[
-					{ maxWidth: 980, cols: 2, spacing: 'xl' },
-					{ maxWidth: 755, cols: 1, spacing: 'xl' },
+					{ maxWidth: 'md', cols: 2, spacing: 'xl' },
+					{ maxWidth: 'sm', cols: 1, spacing: 'xl' },
 				]}
 			>
 				{features}

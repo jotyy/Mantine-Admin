@@ -109,7 +109,7 @@ export function Header({ links }: HeaderActionProps) {
 	});
 
 	return (
-		<MantineHeader height={HEADER_HEIGHT} sx={{ borderBottom: 0 }}>
+		<MantineHeader height={HEADER_HEIGHT}>
 			<Container className={classes.inner} fluid>
 				<Group>
 					<Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />

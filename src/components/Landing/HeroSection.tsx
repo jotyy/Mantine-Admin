@@ -5,30 +5,14 @@ import { IconArrowRight, IconStar } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
 
 const useStyles = createStyles(theme => ({
-	root: {
-		paddingTop: `calc(${theme.spacing.xl} * 3)`,
-		paddingBottom: `calc(${theme.spacing.xl} * 3)`,
-	},
-
 	inner: {
+		paddingTop: `calc(${theme.spacing.xl} * 4)`,
+		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
 		display: 'flex',
 		justifyContent: 'space-between',
-
-		[theme.fn.smallerThan('md')]: {
-			flexDirection: 'column',
-		},
-	},
-
-	image: {
-		[theme.fn.smallerThan('md')]: {
-			display: 'none',
-		},
-	},
-
-	content: {
-		paddingTop: `calc(${theme.spacing.xl} * 2)`,
-		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
-		marginRight: `calc(${theme.spacing.xl} * 3)`,
+		flexDirection: 'column',
+		alignItems: 'center',
+		textAlign: 'center',
 
 		[theme.fn.smallerThan('md')]: {
 			marginRight: 0,
@@ -48,6 +32,20 @@ const useStyles = createStyles(theme => ({
 		},
 	},
 
+	subtitle: {
+		paddingTop: theme.spacing.xl,
+		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+		fontWeight: 800,
+		lineHeight: 1.05,
+		fontSize: rem(40),
+
+		[theme.fn.smallerThan('md')]: {
+			maxWidth: '100%',
+			fontSize: rem(26),
+			lineHeight: 1.15,
+		},
+	},
+
 	description: {
 		opacity: 0.75,
 		maxWidth: rem(500),
@@ -61,7 +59,7 @@ const useStyles = createStyles(theme => ({
 		paddingLeft: rem(40),
 		paddingRight: rem(40),
 		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-		fontSize: rem(22),
+		fontSize: rem(18),
 
 		[theme.fn.smallerThan('md')]: {
 			width: '100%',
@@ -74,65 +72,51 @@ export function HeroSection() {
 	const router = useRouter();
 
 	return (
-		<div className={classes.root}>
-			<Container pt="sm" size="lg">
-				<div className={classes.inner}>
-					<div className={classes.content}>
-						<Title className={classes.title}>
-							A{' '}
-							<Text
-								component="span"
-								inherit
-								variant="gradient"
-								gradient={{ from: 'brand', to: 'cyan' }}
-							>
-								Next.js 13
-							</Text>{' '}
-							Admin template build with{' '}
-							<Text
-								component="span"
-								inherit
-								variant="gradient"
-								gradient={{ from: 'brand', to: 'cyan' }}
-							>
-								Mantine UI
-							</Text>
-						</Title>
+		<Container pt="sm" size="lg">
+			<div className={classes.inner}>
+				<Title
+					variant="gradient"
+					gradient={{ from: 'brand', to: 'cyan' }}
+					className={classes.title}
+				>
+					MantineAdmin
+				</Title>
+				<Title className={classes.subtitle}>
+					A Next.js 13 Admin template build with Mantine UI
+				</Title>
 
-						<Text className={classes.description} mt={30}>
-							Build fully functional dashboard web applications with ease – Mantine-Admin
-							includes all components and hooks to cover you in any situation
-						</Text>
+				<Text className={classes.description} mt={30}>
+					Build fully functional dashboard web applications with ease – Mantine-Admin
+					includes all components and hooks to cover you in any situation
+				</Text>
 
-						<Group mt={40}>
-							<Button
-								variant="gradient"
-								gradient={{ from: 'brand', to: 'cyan' }}
-								size="lg"
-								className={classes.control}
-								onClick={() => {
-									router.push('/auth/login');
-								}}
-								rightIcon={<IconArrowRight />}
-							>
-								Get started
-							</Button>
-							<Button
-								variant="outline"
-								size="lg"
-								className={classes.control}
-								onClick={() => {
-									// open github
-									window.open('https://github.com/jotyy/mantine-admin');
-								}}
-								rightIcon={<IconStar />}
-							>
-								Give a Star
-							</Button>
-						</Group>
-					</div>
-				</div>
-			</Container>
-		</div>
+				<Group mt={40}>
+					<Button
+						variant="gradient"
+						gradient={{ from: 'brand', to: 'cyan' }}
+						size="lg"
+						className={classes.control}
+						onClick={() => {
+							router.push('/auth/login');
+						}}
+						rightIcon={<IconArrowRight />}
+					>
+						Get started
+					</Button>
+					<Button
+						variant="outline"
+						size="lg"
+						className={classes.control}
+						onClick={() => {
+							// open github
+							window.open('https://github.com/jotyy/mantine-admin');
+						}}
+						rightIcon={<IconStar />}
+					>
+						Give a Star
+					</Button>
+				</Group>
+			</div>
+		</Container>
 	);
 }

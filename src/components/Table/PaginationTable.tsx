@@ -1,49 +1,50 @@
 'use client';
 
-import { useBlocks } from '@/services/ticker';
-import { Data } from '@/types/ticker-response';
-import { ActionIcon, Badge, Stack, Title, Tooltip } from '@mantine/core';
+import { useProducts } from '@/services/products';
+import { Product } from '@/services/products/types';
+import { ActionIcon, Badge, Rating, Stack, Title, Tooltip } from '@mantine/core';
 import { IconRefresh } from '@tabler/icons-react';
-import {
-	MRT_ColumnDef,
-	MRT_PaginationState,
-	MantineReactTable,
-} from 'mantine-react-table';
+import { MRT_ColumnDef, MantineReactTable } from 'mantine-react-table';
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 export function PaginationTable() {
-	const [pagination, setPagination] = useState<MRT_PaginationState>({
-		pageIndex: 0,
-		pageSize: 10,
-	});
+	const { data, isError, isFetching, isLoading, refetch } = useProducts();
 
-	const { data, isError, isFetching, isLoading, refetch } = useBlocks({
-		pageIndex: pagination.pageIndex,
-		pageSize: pagination.pageSize,
-	});
-
-	const columns = useMemo<MRT_ColumnDef<Data>[]>(
+	const columns = useMemo<MRT_ColumnDef<Product>[]>(
 		() => [
 			{
-				accessorKey: 'id',
-				header: 'ID',
+				accessorKey: 'code',
+				header: 'Code',
 			},
 			{
-				accessorKey: 'attributes.transaction_hash',
-				header: 'Hash',
+				accessorKey: 'name',
+				header: 'Name',
 			},
 			{
-				accessorKey: 'attributes.capacity_involved',
-				header: 'Capacity',
+				accessorKey: 'price',
+				header: 'Price',
+				accessorFn: row => `$${row.price.toFixed(2)}`,
+			},
+			{
+				accessorKey: 'category',
+				header: 'Category',
+			},
+			{
+				accessorKey: 'rating',
+				header: 'Reviews',
+				Cell: ({ cell }) => <Rating defaultValue={cell.getValue<number>()} readOnly />,
+			},
+			{
+				accessorKey: 'inventoryStatus',
+				header: 'Status',
 				Cell: ({ cell }) => {
-					const value = cell.getValue<string>();
-					return <Badge color={value}>{value}</Badge>;
+					const status = cell.getValue<'INSTOCK' | 'OUTOFSTOCK' | 'LOWSTOCK'>();
+					let color: 'red' | 'yellow' | 'green' = 'red';
+					if (status === 'INSTOCK') color = 'green';
+					else if (status === 'LOWSTOCK') color = 'yellow';
+					return <Badge color={color}>{status}</Badge>;
 				},
-			},
-			{
-				accessorKey: 'attributes.block_timestamp',
-				header: 'Time',
 			},
 		],
 		[]
@@ -54,13 +55,9 @@ export function PaginationTable() {
 			<Title order={5}>Pagintion Example</Title>
 			<MantineReactTable
 				columns={columns}
-				data={data?.data ?? []}
-				initialState={{ showColumnFilters: false, density: 'lg' }}
-				manualPagination
-				enableColumnActions={false}
+				data={data ?? []}
+				initialState={{ density: 'lg' }}
 				enableDensityToggle={false}
-				enableFullScreenToggle={false}
-				enableGlobalFilter={false}
 				mantinePaperProps={{ shadow: '0' }}
 				mantineToolbarAlertBannerProps={
 					isError
@@ -70,7 +67,6 @@ export function PaginationTable() {
 						  }
 						: undefined
 				}
-				onPaginationChange={setPagination}
 				renderTopToolbarCustomActions={() => (
 					<Tooltip withArrow label="Refresh Data">
 						<ActionIcon onClick={() => refetch()}>
@@ -78,10 +74,9 @@ export function PaginationTable() {
 						</ActionIcon>
 					</Tooltip>
 				)}
-				rowCount={data?.meta.total ?? 0}
+				rowCount={data?.length ?? 0}
 				state={{
 					isLoading,
-					pagination,
 					showAlertBanner: isError,
 					showProgressBars: isFetching,
 				}}

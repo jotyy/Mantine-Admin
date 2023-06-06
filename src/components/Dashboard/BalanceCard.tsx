@@ -12,14 +12,7 @@ import {
 	createStyles,
 	rem,
 } from '@mantine/core';
-import {
-	IconArrowRight,
-	IconArrowUp,
-	IconCircle,
-	IconCircleFilled,
-} from '@tabler/icons-react';
-import { useState } from 'react';
-import Chart, { Props } from 'react-apexcharts';
+import { IconArrowRight, IconArrowUp } from '@tabler/icons-react';
 import { BalanceChart } from './BalanceChart';
 
 const useStyle = createStyles(theme => ({

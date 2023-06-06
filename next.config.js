@@ -1,9 +1,5 @@
 const withPlugins = require('next-compose-plugins');
 const withImages = require('next-images');
-const withPWA = require('next-pwa');
-const runtimeCaching = require('next-pwa/cache');
-
-const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = async _phase => {
 	/** @type {import('next').NextConfig} */
@@ -24,16 +20,6 @@ module.exports = async _phase => {
 
 						return config;
 					},
-				}),
-			],
-			[
-				withPWA({
-					dest: 'public',
-					register: true,
-					skipWaiting: true,
-					runtimeCaching,
-					buildExcludes: [/middleware-manifest.json$/],
-					disable: !isProduction,
 				}),
 			],
 		],

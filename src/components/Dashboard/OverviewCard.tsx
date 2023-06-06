@@ -1,5 +1,9 @@
 import { Card, Title } from '@mantine/core';
-import Chart, { Props } from 'react-apexcharts';
+import { Props } from 'react-apexcharts';
+
+import dynamic from 'next/dynamic';
+
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 const series = [
 	{

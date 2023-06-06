@@ -71,6 +71,8 @@ export function HeroSection() {
 	const { classes } = useStyles();
 	const router = useRouter();
 
+	router.prefetch('/dashboard');
+
 	return (
 		<Container pt="sm" size="lg">
 			<div className={classes.inner}>
@@ -97,7 +99,7 @@ export function HeroSection() {
 						size="lg"
 						className={classes.control}
 						onClick={() => {
-							router.push('/auth/login');
+							router.push('/dashboard');
 						}}
 						rightIcon={<IconArrowRight />}
 					>

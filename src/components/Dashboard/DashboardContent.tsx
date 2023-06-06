@@ -17,6 +17,7 @@ import { StatsGroup } from '../StatsGroup';
 import { mockData } from '../StatsGroup/mock';
 import { WelcomeCard } from './WelcomeCard';
 import { BalanceCard } from './BalanceCard';
+import { OverviewCard } from './OverviewCard';
 
 export function DashboardContent() {
 	return (
@@ -33,7 +34,9 @@ export function DashboardContent() {
 			<Grid.Col span={8}>
 				<BalanceCard />
 			</Grid.Col>
-			<Grid.Col span={4}></Grid.Col>
+			<Grid.Col span={4}>
+				<OverviewCard />
+			</Grid.Col>
 		</Grid>
 	);
 }

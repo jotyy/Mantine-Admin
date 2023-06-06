@@ -1,5 +1,19 @@
-import { createStyles, Group, Paper, Text, ThemeIcon, SimpleGrid } from '@mantine/core';
-import { IconArrowUpRight, IconArrowDownRight } from '@tabler/icons-react';
+import {
+	createStyles,
+	Group,
+	Paper,
+	Text,
+	ThemeIcon,
+	SimpleGrid,
+	useMantineTheme,
+} from '@mantine/core';
+import {
+	IconArrowUpRight,
+	IconArrowDownRight,
+	IconBellDown,
+	IconArrowDown,
+	IconArrowUp,
+} from '@tabler/icons-react';
 
 const useStyles = createStyles(theme => ({
 	label: {
@@ -13,11 +27,12 @@ interface StatsGroupProps {
 
 export function StatsGroup({ data }: StatsGroupProps) {
 	const { classes } = useStyles();
+	const theme = useMantineTheme();
 	const stats = data.map(stat => {
 		const DiffIcon = stat.diff > 0 ? IconArrowUpRight : IconArrowDownRight;
 
 		return (
-			<Paper withBorder p="md" radius="md" shadow="sm" key={stat.title}>
+			<Paper key={stat.title} p="md" radius="md">
 				<Group position="apart">
 					<div>
 						<Text c="dimmed" tt="uppercase" fw={700} fz="xs" className={classes.label}>
@@ -27,23 +42,15 @@ export function StatsGroup({ data }: StatsGroupProps) {
 							{stat.value}
 						</Text>
 					</div>
-					<ThemeIcon
-						color="gray"
-						variant="light"
-						sx={theme => ({
-							color: stat.diff > 0 ? theme.colors.teal[6] : theme.colors.red[6],
-						})}
-						size={38}
-						radius="md"
-					>
-						<DiffIcon size="1.8rem" stroke={1.5} />
-					</ThemeIcon>
 				</Group>
 				<Text c="dimmed" fz="sm" mt="sm">
 					<Text component="span" c={stat.diff > 0 ? 'teal' : 'red'} fw={700}>
 						{stat.diff}%
 					</Text>{' '}
-					{stat.diff > 0 ? 'increase' : 'decrease'} compared to last month
+					<DiffIcon
+						size="1rem"
+						color={stat.diff > 0 ? theme.colors.teal[6] : theme.colors.red[6]}
+					/>
 				</Text>
 			</Paper>
 		);

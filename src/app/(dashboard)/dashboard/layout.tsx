@@ -16,6 +16,11 @@ export default function DashboardLayout({ children }: Props) {
 	return (
 		<AppShell
 			layout="alt"
+			sx={theme => ({
+				main: {
+					backgroundColor: theme.colors.gray[0],
+				},
+			})}
 			navbar={<Navbar data={routes} hidden={!opened} />}
 			navbarOffsetBreakpoint="sm"
 			header={

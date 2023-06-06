@@ -11,7 +11,6 @@ import {
 	rem,
 } from '@mantine/core';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const useStyles = createStyles(theme => ({
@@ -71,15 +70,11 @@ export function NavLinksGroup({
 	links,
 }: LinksGroupProps) {
 	const { classes, theme } = useStyles();
-	const router = useRouter();
-
-	link && router.prefetch(link);
 
 	const hasLinks = Array.isArray(links);
 	const [opened, setOpened] = useState(initiallyOpened || false);
 	const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
 	const items = (hasLinks ? links : []).map(link => {
-		router.prefetch(link.link);
 		return (
 			<Text<'a'>
 				component="a"
@@ -101,7 +96,6 @@ export function NavLinksGroup({
 						setOpened(o => !o);
 						return;
 					}
-					router.push(link || '/');
 				}}
 				className={classes.control}
 			>

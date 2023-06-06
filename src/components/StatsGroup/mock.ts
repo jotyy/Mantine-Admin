@@ -1,5 +1,3 @@
-import { IconBrandDiscord, IconEye, IconReceipt, IconUser } from '@tabler/icons-react';
-
 export const mockData = [
 	{
 		title: 'BTC',
@@ -13,7 +11,7 @@ export const mockData = [
 	},
 	{
 		title: 'DOGE',
-		value: '745',
+		value: '$ 0.745',
 		diff: 18,
 	},
 ];

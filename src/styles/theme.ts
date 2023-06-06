@@ -18,4 +18,7 @@ export const theme: MantineThemeOverride = {
 	},
 	primaryColor: 'brand',
 	primaryShade: 5,
+	shadows: {
+		xs: '',
+	},
 };

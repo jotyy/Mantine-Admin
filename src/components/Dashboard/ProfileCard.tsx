@@ -30,7 +30,7 @@ export function ProfileCard() {
 	const { classes } = useStyle();
 
 	return (
-		<Card withBorder shadow="sm" radius="md">
+		<Card radius="md">
 			<Card.Section className={classes.section}>
 				<Group position="apart">
 					<Avatar radius="xl"></Avatar>

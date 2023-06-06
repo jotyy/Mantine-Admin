@@ -54,6 +54,7 @@
 		"@tabler/icons-react": "^2.18.0",
 		"@tanstack/react-query": "4.29.7",
 		"@tanstack/react-table": "^8.9.1",
+		"apexcharts": "^3.40.0",
 		"axios": "^1.4.0",
 		"dayjs": "^1.11.7",
 		"framer-motion": "10.12.10",

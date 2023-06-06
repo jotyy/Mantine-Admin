@@ -1,11 +1,10 @@
 import { NavItem } from '@/types/nav-item';
 import {
+	IconChartArcs,
 	IconDashboard,
 	IconForms,
-	IconTable,
-	IconChartArcs,
-	IconLock,
 	IconSettings2,
+	IconTable,
 } from '@tabler/icons-react';
 
 export const routes: NavItem[] = [

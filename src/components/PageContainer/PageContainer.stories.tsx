@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PageContainer } from '.';
-import { rem } from '@mantine/core';
+import { PageContainer } from './PageContainer';
 
 const meta: Meta<typeof PageContainer> = {
 	title: 'Components/PageContainer',

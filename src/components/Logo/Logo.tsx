@@ -1,4 +1,4 @@
-import { Flex, Image, Title } from '@mantine/core';
+import { Flex, Text } from '@mantine/core';
 interface Props {
 	width?: string;
 	height?: string;
@@ -6,7 +6,11 @@ interface Props {
 
 export const Logo: React.FC<Props> = ({ width, height }) => (
 	<Flex direction="row" align="center" gap={4}>
-		<Image src="/logo.png" alt="logo" width={width} height={height} />
-		<Title order={4}>Mantine Admin</Title>
+		<Text fw="bolder" size="xl">
+			Mantine
+			<Text component="span" fw="normal" c="gray.6">
+				Admin
+			</Text>
+		</Text>
 	</Flex>
 );

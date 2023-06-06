@@ -1,21 +1,21 @@
-import { routes } from '@/lib/routes';
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdminNavbar } from '.';
+import { Logo } from './Logo';
+import { rem } from '@mantine/core';
 
-const meta: Meta<typeof AdminNavbar> = {
-	title: 'Components/AdminNavbar',
-	component: AdminNavbar,
+const meta: Meta<typeof Logo> = {
+	title: 'Components/Logo',
+	component: Logo,
 	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/7.0/react/writing-docs/docs-page
 	tags: ['autodocs'],
 	parameters: {
 		// More on how to position stories at: https://storybook.js.org/docs/7.0/react/configure/story-layout
-		layout: 'fullscreen',
+		layout: 'centered',
 	},
 };
 
 export default meta;
-type Story = StoryObj<typeof AdminNavbar>;
+type Story = StoryObj<typeof Logo>;
 
 export const Default: Story = {
-	render: () => <AdminNavbar data={routes} />,
+	render: () => <Logo width={rem(50)} />,
 };

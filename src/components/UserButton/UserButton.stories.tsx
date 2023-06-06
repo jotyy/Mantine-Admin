@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SidebarItem } from './SidebarItem';
+import { UserButton } from './UserButton';
 import { IconUser } from '@tabler/icons-react';
 
-const meta: Meta<typeof SidebarItem> = {
-	title: 'Components/SidebarItem',
-	component: SidebarItem,
+const meta: Meta<typeof UserButton> = {
+	title: 'Components/UserButton',
+	component: UserButton,
 	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/7.0/react/writing-docs/docs-page
 	tags: ['autodocs'],
 	parameters: {
@@ -14,12 +14,14 @@ const meta: Meta<typeof SidebarItem> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SidebarItem>;
+type Story = StoryObj<typeof UserButton>;
 
 export const Default: Story = {
-	render: () => <SidebarItem icon={IconUser} label="用户中心" link="/user" />,
-};
-
-export const Active: Story = {
-	render: () => <SidebarItem icon={IconUser} label="用户中心" link="/" />,
+	render: () => (
+		<UserButton
+			image="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
+			name="Harriette Spoonlicker"
+			email="hspoonlicker@outlook.com"
+		/>
+	),
 };

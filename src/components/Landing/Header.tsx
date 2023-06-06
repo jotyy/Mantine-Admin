@@ -12,6 +12,7 @@ import {
 	rem,
 	Title,
 } from '@mantine/core';
+import { Logo } from '@/components/Logo/Logo';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 
@@ -113,7 +114,7 @@ export function Header({ links }: HeaderActionProps) {
 			<Container className={classes.inner} fluid>
 				<Group>
 					<Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
-					<Title order={5}>Mantine Admin</Title>
+					<Logo />
 				</Group>
 				<Group spacing={5} className={classes.links}>
 					{items}

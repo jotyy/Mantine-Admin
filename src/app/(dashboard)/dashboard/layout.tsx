@@ -1,7 +1,7 @@
 'use client';
 
 import { AdminHeader } from '@/components/Headers/AdminHeader';
-import { AdminNavbar } from '@/components/Navbars/AdminNavbar';
+import { Navbar } from '@/components/Navbar/Navbar';
 import { routes } from '@/lib/routes';
 import { AppShell, Burger, Container, Footer, MediaQuery, Text } from '@mantine/core';
 import { useState } from 'react';
@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }: Props) {
 	return (
 		<AppShell
 			layout="alt"
-			navbar={<AdminNavbar data={routes} hidden={!opened} />}
+			navbar={<Navbar data={routes} hidden={!opened} />}
 			navbarOffsetBreakpoint="sm"
 			header={
 				<AdminHeader

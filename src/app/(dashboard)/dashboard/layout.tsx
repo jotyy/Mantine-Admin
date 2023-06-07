@@ -2,7 +2,7 @@
 
 import { AdminHeader } from '@/components/Headers/AdminHeader';
 import { Navbar } from '@/components/Navbar/Navbar';
-import { routes } from '@/lib/routes';
+import { navLinks } from '@/config';
 import { AppShell, Burger, Container, Footer, MediaQuery, Text } from '@mantine/core';
 import { useState } from 'react';
 
@@ -21,7 +21,7 @@ export default function DashboardLayout({ children }: Props) {
 					backgroundColor: theme.colors.gray[0],
 				},
 			})}
-			navbar={<Navbar data={routes} hidden={!opened} />}
+			navbar={<Navbar data={navLinks} hidden={!opened} />}
 			navbarOffsetBreakpoint="sm"
 			header={
 				<AdminHeader

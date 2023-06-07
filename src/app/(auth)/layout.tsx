@@ -1,6 +1,5 @@
 'use client';
 
-import { getPath } from '@/lib/constants';
 import { Anchor, Center, Container, Text, Title } from '@mantine/core';
 
 interface Props {
@@ -27,7 +26,7 @@ export default function AuthLayout({ children }: Props) {
 				</Title>
 				<Text color="dimmed" size="sm" align="center" mt={5}>
 					Don&apos;t have an account?{' '}
-					<Anchor size="sm" href={getPath('SIGN_UP')}>
+					<Anchor size="sm" href="/register">
 						Sign Up
 					</Anchor>
 				</Text>

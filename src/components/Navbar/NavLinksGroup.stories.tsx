@@ -1,4 +1,4 @@
-import { routes } from '@/lib/routes';
+import { navLinks } from '@/config';
 import type { Meta, StoryObj } from '@storybook/react';
 import { NavLinksGroup } from './NavLinksGroup';
 import { IconCalendarStats } from '@tabler/icons-react';

@@ -6,7 +6,7 @@ import {
 	IconMoodSmile,
 } from '@tabler/icons-react';
 
-export const routes: NavItem[] = [
+export const navLinks: NavItem[] = [
 	{ label: 'Dashboard', icon: IconDashboard, link: '/dashboard' },
 
 	{

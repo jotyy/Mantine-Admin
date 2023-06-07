@@ -1,6 +1,5 @@
 'use client';
 
-import { getPath } from '@/lib/constants';
 import {
 	Paper,
 	TextInput,
@@ -21,7 +20,7 @@ export function LoginForm() {
 			<PasswordInput label="Password" placeholder="Your password" required mt="md" />
 			<Group position="apart" mt="md">
 				<Checkbox label="Remember me" />
-				<Anchor size="sm" href={getPath('FORGOT_PASSWORD')}>
+				<Anchor size="sm" href="#">
 					Forgot Password？
 				</Anchor>
 			</Group>

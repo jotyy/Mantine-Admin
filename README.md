@@ -57,19 +57,12 @@
 Deploy your own copy of this template in just a few clicks!
 
 <div>
- <a href="https://vercel.com/import/project?template=https://github.com/gmatthewsfeuer/next-plate" title="Deploy to Vercel">
+ <a href="https://vercel.com/import/project?template=https://github.com/jotyy/mantine-admin" title="Deploy to Vercel">
   <img src="https://vercel.com/button" alt="Deploy to Vercel" />
  </a>
- <a href="https://app.netlify.com/start/deploy?repository=https://github.com/gmatthewsfeuer/next-plate" title="Deploy to Netlify">
+ <a href="https://app.netlify.com/start/deploy?repository=https://github.com/jotyy/mantine-admin" title="Deploy to Netlify">
   <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
  </a>
- <a href="https://stackblitz.com/fork/github/gmatthewsfeuer/next-plate" title="Open in StackBlitz">
-  <img
-    src="https://developer.stackblitz.com/img/open_in_stackblitz.svg"
-    alt="Open in StackBlitz"
-  />
- </a>
-</div>
 
 <!-- Introduction Section -->
 
@@ -78,10 +71,6 @@ Deploy your own copy of this template in just a few clicks!
 This template have a bunch of folders, code examples and configurations. Feel free to edit or remove them, including this README!
 
 **Customize and enjoy!**
-
-<!-- Documentation Section -->
-
-## 📚 [Documentation →](https://next-plate.vercel.app/docs)
 
 <!-- Features Section -->
 
@@ -134,7 +123,6 @@ This project features all the latest tools and good practices in web development
 ### Additional Plugins
 
 - 🗃️ **[next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins)** – Provides a cleaner API for enabling and configuring plugins for Next.js
-- 📱 **[next-pwa](https://github.com/shadowwalker/next-pwa)** – A PWA plugin for Next.js
 - 🤖 **[next-sitemap](https://github.com/iamvishnusankar/next-sitemap)** – Sitemap generator for Next.js
 - 🎉 **[Partytown](https://partytown.builder.io/)** – Relocate resource intensive third-party scripts off of the main thread and into a web worker
 
@@ -185,7 +173,7 @@ Once all dependencies have been installed, you can run the local development ser
 
 ```bash
 # PNPM
-$ pnpm run dev
+$ pnpm dev
 # NPM
 $ npm run dev
 # Yarn
@@ -202,7 +190,7 @@ Make a production build:
 
 ```bash
 # PNPM
-$ pnpm run build
+$ pnpm build
 # NPM
 $ npm run build
 # Yarn
@@ -397,7 +385,7 @@ See below the file tree to understand the project structure.
 > Folders and files marked with (`**`) are optional, so you can delete then.
 
 ```txt
-📂 next-plate/
+📂 mantine-admin/
 ┣ 📂 .github/                   # GitHub's folder configs **
 ┣ 📂 .husky/                    # Husky's folder
 ┃ ┣ 📃 commit-msg               # Commitlint git hook
@@ -413,15 +401,14 @@ See below the file tree to understand the project structure.
 ┃ ┃ ┣ 📂 demo/                  # Demonstrations project **
 ┃ ┃ ┗ 📂 translations/          # Translations folder **
 ┃ ┣ 📃 favicon.ico              # Icon tab browser
-┃ ┣ 📃 site.webmanifest         # PWA config
 ┣ 📂 src/
 ┃ ┣ 📂 animations/              # Framer Motion Animations **
+┃ ┣ 📂 app/                   # App pages
 ┃ ┣ 📂 components/              # App Components
-┃ ┃ ┗ 📂 Motion/                # Chakra + Framer components **
+┃ ┃ ┗ 📂 Motion/                # Mantine-UI + Framer components **
 ┃ ┣ 📂 hooks/                   # React Hooks **
 ┃ ┃ ┗ 📃 useFetch.ts            # SWR fetch hook (optional) **
 ┃ ┣ 📂 interfaces/              # TypeScript Interfaces
-┃ ┣ 📂 pages/                   # App pages
 ┃ ┣ 📂 scripts/                 # Additional scripts **
 ┃ ┃ ┣ 📃 babel.config.js        # Babel config with WDYR **
 ┃ ┃ ┗ 📃 wdyr.ts                # WDYR file **
@@ -434,7 +421,7 @@ See below the file tree to understand the project structure.
 ┃ ┣ 📂 stores/                  # Zustand stores
 ┃ ┣ 📂 styles/                  # Styles folder
 ┃ ┃ ┣ 📃 bgImages.ts            # SVG background images **
-┃ ┃ ┗ 📃 theme.ts               # Chakra-UI theme
+┃ ┃ ┗ 📃 theme.ts               # Mantine-UI theme
 ┃ ┗ 📂 utils/                   # Useful functions **
 ┣ 📃 .babelrc                   # Default Babel config
 ┣ 📃 .editorconfig              # Editor config

@@ -97,7 +97,7 @@ export const SimpleTable = () => {
 			<MantineReactTable
 				columns={columns}
 				data={data}
-				mantinePaperProps={{ shadow: '0' }}
+				mantinePaperProps={{ shadow: '0', radius: 'md' }}
 			/>
 		</Stack>
 	);

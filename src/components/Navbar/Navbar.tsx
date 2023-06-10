@@ -18,7 +18,7 @@ const useStyles = createStyles(theme => ({
 	},
 
 	header: {
-		padding: theme.spacing.md,
+		padding: theme.spacing.xs,
 		paddingTop: 0,
 		marginLeft: `calc(${theme.spacing.md} * -1)`,
 		marginRight: `calc(${theme.spacing.md} * -1)`,

@@ -45,6 +45,14 @@ export function PaginationTable() {
 					else if (status === 'LOWSTOCK') color = 'yellow';
 					return <Badge color={color}>{status}</Badge>;
 				},
+				filterVariant: 'select',
+				mantineFilterSelectProps: {
+					data: [
+						{ label: 'In Stock', value: 'INSTOCK' },
+						{ label: 'Out of Stock', value: 'OUTOFSTOCK' },
+						{ label: 'Low Stock', value: 'LOWSTOCK' },
+					] as any,
+				},
 			},
 		],
 		[]
@@ -58,7 +66,15 @@ export function PaginationTable() {
 				data={data ?? []}
 				initialState={{ density: 'lg' }}
 				enableDensityToggle={false}
-				mantinePaperProps={{ shadow: '0' }}
+				mantinePaperProps={{ shadow: '0', radius: 'md' }}
+				mantineFilterTextInputProps={{
+					sx: { borderBottom: 'unset', marginTop: '8px' },
+					variant: 'filled',
+				}}
+				mantineFilterSelectProps={{
+					sx: { borderBottom: 'unset', marginTop: '8px' },
+					variant: 'filled',
+				}}
 				mantineToolbarAlertBannerProps={
 					isError
 						? {

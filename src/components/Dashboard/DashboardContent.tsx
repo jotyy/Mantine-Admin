@@ -1,23 +1,12 @@
 'use client';
 
-import {
-	Card,
-	Flex,
-	Grid,
-	List,
-	Space,
-	Stack,
-	Text,
-	ThemeIcon,
-	Title,
-} from '@mantine/core';
-import { IconCircleCheck } from '@tabler/icons-react';
-import { ProfileCard } from './ProfileCard';
+import { Flex, Grid } from '@mantine/core';
 import { StatsGroup } from '../StatsGroup';
 import { mockData } from '../StatsGroup/mock';
-import { WelcomeCard } from './WelcomeCard';
 import { BalanceCard } from './BalanceCard';
 import { OverviewCard } from './OverviewCard';
+import { ProfileCard } from './ProfileCard';
+import { WelcomeCard } from './WelcomeCard';
 
 export function DashboardContent() {
 	return (

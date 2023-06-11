@@ -76,7 +76,7 @@ export function HeroSection() {
 			<div className={classes.inner}>
 				<Title
 					variant="gradient"
-					gradient={{ from: 'brand', to: 'cyan' }}
+					gradient={{ from: 'indigo', to: 'cyan' }}
 					className={classes.title}
 				>
 					MantineAdmin
@@ -93,7 +93,7 @@ export function HeroSection() {
 				<Group mt={40}>
 					<Button
 						variant="gradient"
-						gradient={{ from: 'brand', to: 'cyan' }}
+						gradient={{ from: 'indigo', to: 'cyan' }}
 						size="lg"
 						className={classes.control}
 						onClick={() => {

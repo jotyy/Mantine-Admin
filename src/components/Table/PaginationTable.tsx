@@ -2,7 +2,16 @@
 
 import { useProducts } from '@/services/products';
 import { Product } from '@/services/products/types';
-import { ActionIcon, Badge, Rating, Stack, Title, Tooltip } from '@mantine/core';
+import {
+	ActionIcon,
+	Badge,
+	Paper,
+	Rating,
+	Space,
+	Stack,
+	Title,
+	Tooltip,
+} from '@mantine/core';
 import { IconRefresh } from '@tabler/icons-react';
 import { MRT_ColumnDef, MantineReactTable } from 'mantine-react-table';
 
@@ -59,14 +68,15 @@ export function PaginationTable() {
 	);
 
 	return (
-		<Stack mt="lg">
+		<Paper withBorder radius="md" p="md" mt="lg">
 			<Title order={5}>Pagintion Example</Title>
+			<Space h="md" />
 			<MantineReactTable
 				columns={columns}
 				data={data ?? []}
 				initialState={{ density: 'lg' }}
 				enableDensityToggle={false}
-				mantinePaperProps={{ shadow: '0', radius: 'md' }}
+				mantinePaperProps={{ shadow: '0', withBorder: false }}
 				mantineFilterTextInputProps={{
 					sx: { borderBottom: 'unset', marginTop: '8px' },
 					variant: 'filled',
@@ -83,13 +93,6 @@ export function PaginationTable() {
 						  }
 						: undefined
 				}
-				renderTopToolbarCustomActions={() => (
-					<Tooltip withArrow label="Refresh Data">
-						<ActionIcon onClick={() => refetch()}>
-							<IconRefresh />
-						</ActionIcon>
-					</Tooltip>
-				)}
 				rowCount={data?.length ?? 0}
 				state={{
 					isLoading,
@@ -97,6 +100,6 @@ export function PaginationTable() {
 					showProgressBars: isFetching,
 				}}
 			/>
-		</Stack>
+		</Paper>
 	);
 }

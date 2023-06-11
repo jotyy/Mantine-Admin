@@ -37,11 +37,11 @@ export const PageContainer: FC<PageContainerProps> = ({
 				</Breadcrumbs>
 			) : null}
 
-			<Title order={3} color={theme.colors.dark[6]}>
+			<Title order={4} color={theme.colors.gray[8]}>
 				{title}
 			</Title>
 
-			<Space h="xl" />
+			<Space h="lg" />
 
 			{children}
 		</Container>

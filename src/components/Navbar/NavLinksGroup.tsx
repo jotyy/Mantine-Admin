@@ -11,6 +11,7 @@ import {
 } from '@mantine/core';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const useStyles = createStyles(theme => ({
@@ -28,6 +29,10 @@ const useStyles = createStyles(theme => ({
 				theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
 			color: theme.colorScheme === 'dark' ? theme.white : theme.black,
 		},
+	},
+
+	activeControl: {
+		color: theme.colors.indigo,
 	},
 
 	link: {
@@ -48,6 +53,12 @@ const useStyles = createStyles(theme => ({
 				theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
 			color: theme.colorScheme === 'dark' ? theme.white : theme.black,
 		},
+	},
+
+	activeLink: {
+		backgroundColor:
+			theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+		color: theme.colors.indigo,
 	},
 
 	chevron: {
@@ -71,13 +82,18 @@ export function NavLinksGroup({
 	links,
 }: LinksGroupProps) {
 	const { classes, theme } = useStyles();
+	const pathname = usePathname();
 
 	const hasLinks = Array.isArray(links);
 	const [opened, setOpened] = useState(initiallyOpened || false);
 	const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
 	const items = (hasLinks ? links : []).map(link => {
 		return (
-			<Link href={link.link} key={link.label} className={classes.link}>
+			<Link
+				href={link.link}
+				key={link.label}
+				className={`${classes.link} ${link.link === pathname && classes.activeLink}`}
+			>
 				{link.label}
 			</Link>
 		);
@@ -86,7 +102,10 @@ export function NavLinksGroup({
 	return (
 		<>
 			{link ? (
-				<Link href={link} className={classes.control}>
+				<Link
+					href={link}
+					className={`${classes.control} ${link === pathname && classes.activeControl}`}
+				>
 					<Group position="apart" spacing={0}>
 						<Box sx={{ display: 'flex', alignItems: 'center' }}>
 							<ThemeIcon variant="light" size={30}>

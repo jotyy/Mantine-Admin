@@ -6,7 +6,7 @@ interface Props {
 
 export const Logo: React.FC<Props> = ({ width, height }) => (
 	<Flex direction="row" align="center" gap={4}>
-		<Text fw="bolder" size="xl">
+		<Text ff={''} fw="bolder" size="xl">
 			Mantine
 			<Text component="span" fw="normal" c="indigo">
 				Admin

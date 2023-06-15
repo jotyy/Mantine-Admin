@@ -24,6 +24,7 @@ export const PageContainer: FC<PageContainerProps> = ({
 	fluid = true,
 }) => {
 	const theme = useMantineTheme();
+	const titleColor = theme.colorScheme === 'dark' ? 'gray' : 'dark';
 
 	return (
 		<Container px={0} fluid={fluid}>
@@ -37,7 +38,7 @@ export const PageContainer: FC<PageContainerProps> = ({
 				</Breadcrumbs>
 			) : null}
 
-			<Title order={4} color={theme.colors.gray[8]}>
+			<Title order={4} color={titleColor}>
 				{title}
 			</Title>
 

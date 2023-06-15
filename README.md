@@ -123,7 +123,6 @@ This project features all the latest tools and good practices in web development
 ### Additional Plugins
 
 - 🗃️ **[next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins)** – Provides a cleaner API for enabling and configuring plugins for Next.js
-- 🤖 **[next-sitemap](https://github.com/iamvishnusankar/next-sitemap)** – Sitemap generator for Next.js
 - 🎉 **[Partytown](https://partytown.builder.io/)** – Relocate resource intensive third-party scripts off of the main thread and into a web worker
 
 <!-- Procedures Section -->
@@ -434,7 +433,6 @@ See below the file tree to understand the project structure.
 ┣ 📃 jest.setup.js              # Jest setup
 ┣ 📃 LICENSE                    # License of the project
 ┣ 📃 next-env.d.ts              # Next.js types to TypeScript
-┣ 📃 next-sitemap.config.js     # Next-Sitemap config
 ┣ 📃 next.config.js             # Next.js config
 ┣ 📃 .prettierrc                # Prettier config
 ┣ 📃 README.md                  # Main README

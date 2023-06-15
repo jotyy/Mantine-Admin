@@ -8,7 +8,7 @@ export function WelcomeCard() {
 				Welcome back!
 			</Title>
 			<Text fz="sm" c="dimmed" fw="500">
-				Skote Crypto Dashboard
+				Mantine Crypto Dashboard
 			</Text>
 			<Space h="sm" />
 			<List

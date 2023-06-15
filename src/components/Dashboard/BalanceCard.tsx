@@ -121,7 +121,7 @@ export function BalanceCard() {
 			</Card.Section>
 			<Card.Section className={classes.section}>
 				<BalanceLeftStack />
-				<BalanceChart />
+				{/* <BalanceChart /> */}
 				<BalanceRightStack />
 			</Card.Section>
 		</Card>

@@ -18,7 +18,8 @@ export default function DashboardLayout({ children }: Props) {
 			layout="alt"
 			sx={theme => ({
 				main: {
-					backgroundColor: theme.colors.gray[0],
+					backgroundColor:
+						theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[1],
 				},
 			})}
 			navbar={<Navbar data={navLinks} hidden={!opened} />}

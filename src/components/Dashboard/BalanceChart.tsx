@@ -1,41 +1,36 @@
-'use client';
+import React from 'react';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
 
-import dynamic from 'next/dynamic';
-import { Props } from 'react-apexcharts';
+ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
-
-const series = [70, 60, 50];
-const options: Props['options'] = {
-	chart: {
-		height: 350,
-		type: 'radialBar',
-	},
-
-	plotOptions: {
-		radialBar: {
-			dataLabels: {
-				name: {
-					fontSize: '22px',
-				},
-				value: {
-					fontSize: '16px',
-				},
-				total: {
-					show: true,
-					label: 'Total',
-				},
-			},
+export const data = {
+	labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+	datasets: [
+		{
+			label: '# of Votes',
+			data: [12, 19, 3, 5, 2, 3],
+			backgroundColor: [
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(54, 162, 235, 0.2)',
+				'rgba(255, 206, 86, 0.2)',
+				'rgba(75, 192, 192, 0.2)',
+				'rgba(153, 102, 255, 0.2)',
+				'rgba(255, 159, 64, 0.2)',
+			],
+			borderColor: [
+				'rgba(255, 99, 132, 1)',
+				'rgba(54, 162, 235, 1)',
+				'rgba(255, 206, 86, 1)',
+				'rgba(75, 192, 192, 1)',
+				'rgba(153, 102, 255, 1)',
+				'rgba(255, 159, 64, 1)',
+			],
+			borderWidth: 1,
 		},
-	},
-
-	stroke: {
-		lineCap: 'round',
-	},
-
-	labels: ['Etherum', 'BTC', 'DOGE'],
+	],
 };
 
 export function BalanceChart() {
-	return <Chart options={options} series={series} type="radialBar" height={300} />;
+	return <Doughnut data={data} />;
 }

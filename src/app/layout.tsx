@@ -1,6 +1,7 @@
 import { AppProvider } from './provider';
 
 export const metadata = {
+	metadataBase: new URL('https://mantine-admin.vercel.app/'),
 	title: { default: 'Mantine Admin', template: '%s | Mantine Admin' },
 	description: 'A Modern Admin template build with Next.js 13/MantineUI',
 	keywords: [
@@ -27,7 +28,7 @@ export const metadata = {
 		site_name: 'Mantine Admin',
 		description: 'A Modern Admin template build with Next.js 13/MantineUI',
 		siteName: 'Mantine Admin',
-		images: [],
+		images: '/static/images/banner.png',
 	},
 	twitter: {
 		card: 'summary_large_image',

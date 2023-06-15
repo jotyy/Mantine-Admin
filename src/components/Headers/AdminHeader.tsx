@@ -2,12 +2,9 @@ import { Spacer } from '@/components/Spacer';
 import {
 	ActionIcon,
 	Avatar,
-	Flex,
-	Group,
 	Header,
-	Kbd,
 	Menu,
-	Stack,
+	Space,
 	Text,
 	TextInput,
 	createStyles,
@@ -20,6 +17,7 @@ import {
 	IconSettings,
 	IconTrash,
 } from '@tabler/icons-react';
+import { ThemeSwitch } from '../ThemeSwitch/ThemeSwitch';
 
 interface Props {
 	burger?: React.ReactNode;
@@ -79,9 +77,8 @@ export function AdminHeader({ burger }: Props) {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<ActionIcon aria-label="settings">
-				<IconSettings />
-			</ActionIcon>
+			<Space w="sm" />
+			<ThemeSwitch />
 		</Header>
 	);
 }

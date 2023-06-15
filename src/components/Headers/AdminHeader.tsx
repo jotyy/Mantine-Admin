@@ -1,14 +1,16 @@
 import { Spacer } from '@/components/Spacer';
 import {
-	ActionIcon,
 	Avatar,
+	Drawer,
 	Header,
 	Menu,
 	Space,
+	Stack,
 	Text,
 	TextInput,
 	createStyles,
 } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import {
 	IconArrowsLeftRight,
 	IconMessageCircle,
@@ -17,7 +19,8 @@ import {
 	IconSettings,
 	IconTrash,
 } from '@tabler/icons-react';
-import { ThemeSwitch } from '../ThemeSwitch/ThemeSwitch';
+import { useState } from 'react';
+import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitch';
 
 interface Props {
 	burger?: React.ReactNode;
@@ -37,6 +40,7 @@ const useStyles = createStyles(theme => ({
 
 export function AdminHeader({ burger }: Props) {
 	const { classes } = useStyles();
+	const [opened, { close, open }] = useDisclosure(false);
 
 	return (
 		<Header height={60} withBorder={false} className={classes.header}>
@@ -54,7 +58,9 @@ export function AdminHeader({ burger }: Props) {
 
 				<Menu.Dropdown>
 					<Menu.Label>Application</Menu.Label>
-					<Menu.Item icon={<IconSettings size={14} />}>Settings</Menu.Item>
+					<Menu.Item icon={<IconSettings size={14} />} onClick={open}>
+						Settings
+					</Menu.Item>
 					<Menu.Item icon={<IconMessageCircle size={14} />}>Messages</Menu.Item>
 					<Menu.Item icon={<IconPhoto size={14} />}>Gallery</Menu.Item>
 					<Menu.Item
@@ -78,7 +84,13 @@ export function AdminHeader({ burger }: Props) {
 				</Menu.Dropdown>
 			</Menu>
 			<Space w="sm" />
-			<ThemeSwitch />
+
+			<Drawer opened={opened} onClose={close} title="Settings" position="right">
+				<Stack>
+					{/* Theme switcher */}
+					<ThemeSwitcher />
+				</Stack>
+			</Drawer>
 		</Header>
 	);
 }

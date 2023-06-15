@@ -9,9 +9,13 @@ interface Props {
 export default function AuthLayout({ children }: Props) {
 	return (
 		<Center
-			sx={() => ({
+			sx={theme => ({
 				minHeight: '100vh',
-				backgroundImage: 'linear-gradient(to top, #dfe9f3 0%, white 100%)',
+				color: theme.colorScheme === 'light' ? theme.colors.dark : theme.white,
+				backgroundImage:
+					theme.colorScheme === 'light'
+						? 'linear-gradient(to top, #dfe9f3 0%, white 100%)'
+						: 'linear-gradient(to top, #1a202c 0%, #2d3748 100%)',
 			})}
 		>
 			<Container size="xs" sx={{ width: 480, paddingBottom: 16 }}>

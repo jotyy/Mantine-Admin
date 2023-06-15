@@ -91,6 +91,9 @@ dependencies:
   sharp:
     specifier: 0.32.1
     version: 0.32.1
+  stylis-plugin-rtl:
+    specifier: ^2.1.1
+    version: 2.1.1(stylis@4.2.0)
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -8229,6 +8232,11 @@ packages:
     hasBin: true
     dev: true
 
+  /cssjanus@2.1.0:
+    resolution: {integrity: sha512-kAijbny3GmdOi9k+QT6DGIXqFvL96aksNlGr4Rhk9qXDZYWUojU4bRc3IHWxdaLNOqgEZHuXoe5Wl2l7dxLW5g==}
+    engines: {node: '>=10.0.0'}
+    dev: false
+
   /cssom@0.3.8:
     resolution: {integrity: sha512-b0tGHbfegbhPJpxpiBPU2sCkigAqtM9O121le6bbOlgyV+NyGyCmVfJ6QW9eRjz8CpNfWEOYBIMIGRYkLwsIYg==}
     dev: true
@@ -14363,6 +14371,15 @@ packages:
       '@babel/core': 7.22.5
       client-only: 0.0.1
       react: 18.2.0
+
+  /stylis-plugin-rtl@2.1.1(stylis@4.2.0):
+    resolution: {integrity: sha512-q6xIkri6fBufIO/sV55md2CbgS5c6gg9EhSVATtHHCdOnbN/jcI0u3lYhNVeuI65c4lQPo67g8xmq5jrREvzlg==}
+    peerDependencies:
+      stylis: 4.x
+    dependencies:
+      cssjanus: 2.1.0
+      stylis: 4.2.0
+    dev: false
 
   /stylis@4.2.0:
     resolution: {integrity: sha512-Orov6g6BB1sDfYgzWfTHDOxamtX1bE/zo104Dh9e6fqJ3PooipYyfJ0pUmrZO2wAvO8YbEyeFrkV91XTsGMSrw==}

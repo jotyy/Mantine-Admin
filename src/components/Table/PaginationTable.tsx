@@ -74,7 +74,7 @@ export function PaginationTable() {
 			<MantineReactTable
 				columns={columns}
 				data={data ?? []}
-				initialState={{ density: 'lg' }}
+				initialState={{ density: 'md' }}
 				enableDensityToggle={false}
 				mantinePaperProps={{ shadow: '0', withBorder: false }}
 				mantineFilterTextInputProps={{

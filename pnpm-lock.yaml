@@ -58,9 +58,6 @@ dependencies:
   framer-motion:
     specifier: 10.12.16
     version: 10.12.16(react-dom@18.2.0)(react@18.2.0)
-  jotai:
-    specifier: ^2.2.0
-    version: 2.2.0(react@18.2.0)
   mantine-react-table:
     specifier: 1.0.0-beta.11
     version: 1.0.0-beta.11(@emotion/react@11.11.0)(@mantine/core@6.0.13)(@mantine/dates@6.0.13)(@mantine/hooks@6.0.13)(@tabler/icons-react@2.22.0)(react-dom@18.2.0)(react@18.2.0)
@@ -11269,18 +11266,6 @@ packages:
     resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}
     hasBin: true
     dev: true
-
-  /jotai@2.2.0(react@18.2.0):
-    resolution: {integrity: sha512-2gsMVpoaBa6aPHLArNhphck4+n8unZ8xF4Ciqhb+Z+tjsvabn5QFisNFHBMWooMAAmmTNU5TcvBIP8/XAsZy8Q==}
-    engines: {node: '>=12.20.0'}
-    peerDependencies:
-      react: '>=17.0.0'
-    peerDependenciesMeta:
-      react:
-        optional: true
-    dependencies:
-      react: 18.2.0
-    dev: false
 
   /js-cookie@2.2.1:
     resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}

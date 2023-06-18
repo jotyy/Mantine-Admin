@@ -11,14 +11,12 @@ import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { useLocalStorage } from '@mantine/hooks';
-import { useState } from 'react';
+import { useConfigStore } from '@/stores/config';
 import rtlPlugin from 'stylis-plugin-rtl';
 import RootStyleRegistry from './emotion';
 
 const queryClient = new QueryClient();
 
-const THEME_KEY = 'mantine-admin-theme';
 const rtlCache = createEmotionCache({
 	key: 'mantine-rtl',
 	prepend: true,
@@ -26,21 +24,10 @@ const rtlCache = createEmotionCache({
 });
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-	const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-		key: THEME_KEY,
-		defaultValue: 'light',
-		getInitialValueInEffect: true,
-	});
-	const [dir, setDir] = useState<'rtl' | 'ltr'>('ltr');
+	const { colorScheme, direction, setColorScheme } = useConfigStore();
 
 	const toggleColorScheme = (value?: ColorScheme) =>
 		setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-
-	const toggleDir = () => {
-		const nextDir = dir === 'ltr' ? 'rtl' : 'ltr';
-		setDir(nextDir);
-		document.querySelector('html')!.setAttribute('dir', nextDir);
-	};
 
 	return (
 		<QueryClientProvider client={queryClient}>
@@ -52,8 +39,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 					<MantineProvider
 						withGlobalStyles
 						withNormalizeCSS
-						emotionCache={dir === 'rtl' ? rtlCache : undefined}
-						theme={{ ...theme, colorScheme, dir }}
+						emotionCache={direction === 'rtl' ? rtlCache : undefined}
+						theme={{ ...theme, colorScheme, dir: direction }}
 					>
 						<ModalsProvider>{children}</ModalsProvider>
 						<Notifications />

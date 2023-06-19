@@ -82,6 +82,9 @@ dependencies:
   react-hook-form:
     specifier: 7.44.3
     version: 7.44.3(react@18.2.0)
+  react-parallax-tilt:
+    specifier: ^1.7.147
+    version: 1.7.147(react-dom@18.2.0)(react@18.2.0)
   react-use:
     specifier: 17.4.0
     version: 17.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -13173,6 +13176,16 @@ packages:
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
+
+  /react-parallax-tilt@1.7.147(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-7W8IOOEE+6ZnPGZIV3YywDA9Zg3LvP1j/H8GELqUVaUqqIJ/hpWXcMKuo8e3gYh/1ueKb0vYO3KwkYtpG8AxPw==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /react-property@2.0.0:
     resolution: {integrity: sha512-kzmNjIgU32mO4mmH5+iUyrqlpFQhF8K2k7eZ4fdLSOPFrD1XgEuSBv9LDEgxRXTMBqMd8ppT0x6TIzqE5pdGdw==}

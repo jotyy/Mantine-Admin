@@ -1,41 +1,20 @@
-import {
-	createStyles,
-	Group,
-	Paper,
-	Text,
-	ThemeIcon,
-	SimpleGrid,
-	useMantineTheme,
-} from '@mantine/core';
-import {
-	IconArrowUpRight,
-	IconArrowDownRight,
-	IconBellDown,
-	IconArrowDown,
-	IconArrowUp,
-} from '@tabler/icons-react';
-
-const useStyles = createStyles(theme => ({
-	label: {
-		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-	},
-}));
+import { Card, Group, SimpleGrid, Text, useMantineTheme } from '@mantine/core';
+import { IconArrowDownRight, IconArrowUpRight } from '@tabler/icons-react';
 
 interface StatsGroupProps {
 	data: { title: string; value: string; diff: number }[];
 }
 
 export function StatsGroup({ data }: StatsGroupProps) {
-	const { classes } = useStyles();
 	const theme = useMantineTheme();
 	const stats = data.map(stat => {
 		const DiffIcon = stat.diff > 0 ? IconArrowUpRight : IconArrowDownRight;
 
 		return (
-			<Paper key={stat.title} p="md" radius="md">
+			<Card key={stat.title} p="md" radius="md">
 				<Group position="apart">
 					<div>
-						<Text c="dimmed" tt="uppercase" fw={700} fz="xs" className={classes.label}>
+						<Text c="dimmed" tt="uppercase" fw={700} fz="xs">
 							{stat.title}
 						</Text>
 						<Text fw={700} fz="xl">
@@ -44,15 +23,15 @@ export function StatsGroup({ data }: StatsGroupProps) {
 					</div>
 				</Group>
 				<Text c="dimmed" fz="sm" mt="sm">
-					<Text component="span" c={stat.diff > 0 ? 'teal' : 'red'} fw={700}>
+					<Text component="span" c={stat.diff > 0 ? 'green.4' : 'red.4'} fw={700}>
 						{stat.diff}%
 					</Text>{' '}
 					<DiffIcon
 						size="1rem"
-						color={stat.diff > 0 ? theme.colors.teal[6] : theme.colors.red[6]}
+						color={stat.diff > 0 ? theme.colors.green[4] : theme.colors.red[4]}
 					/>
 				</Text>
-			</Paper>
+			</Card>
 		);
 	});
 

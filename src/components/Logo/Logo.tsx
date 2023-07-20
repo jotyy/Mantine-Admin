@@ -4,7 +4,7 @@ interface Props {
 	height?: string;
 }
 
-export const Logo: React.FC<Props> = ({ width, height }) => {
+export const Logo: React.FC<Props> = () => {
 	const theme = useMantineTheme();
 	return (
 		<Flex direction="row" align="center" gap={4}>
@@ -14,7 +14,7 @@ export const Logo: React.FC<Props> = ({ width, height }) => {
 				size="xl"
 			>
 				Mantine
-				<Text component="span" fw="normal" c="indigo">
+				<Text component="span" fw="normal" c="gray">
 					Admin
 				</Text>
 			</Text>

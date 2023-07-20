@@ -74,13 +74,7 @@ export function HeroSection() {
 	return (
 		<Container pt="sm" size="lg">
 			<div className={classes.inner}>
-				<Title
-					variant="gradient"
-					gradient={{ from: 'indigo', to: 'cyan' }}
-					className={classes.title}
-				>
-					MantineAdmin
-				</Title>
+				<Title className={classes.title}>MantineAdmin</Title>
 				<Title className={classes.subtitle}>
 					A Next.js 13 Admin template build with Mantine UI
 				</Title>
@@ -92,8 +86,6 @@ export function HeroSection() {
 
 				<Group mt={40}>
 					<Button
-						variant="gradient"
-						gradient={{ from: 'indigo', to: 'cyan' }}
 						size="lg"
 						className={classes.control}
 						onClick={() => {

@@ -2,23 +2,13 @@
 
 import { useProducts } from '@/services/products';
 import { Product } from '@/services/products/types';
-import {
-	ActionIcon,
-	Badge,
-	Paper,
-	Rating,
-	Space,
-	Stack,
-	Title,
-	Tooltip,
-} from '@mantine/core';
-import { IconRefresh } from '@tabler/icons-react';
+import { Badge, Paper, Rating, Space, Title } from '@mantine/core';
 import { MRT_ColumnDef, MantineReactTable } from 'mantine-react-table';
 
 import { useMemo } from 'react';
 
 export function PaginationTable() {
-	const { data, isError, isFetching, isLoading, refetch } = useProducts();
+	const { data, isError, isFetching, isLoading } = useProducts();
 
 	const columns = useMemo<MRT_ColumnDef<Product>[]>(
 		() => [

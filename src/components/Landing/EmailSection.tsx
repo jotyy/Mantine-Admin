@@ -72,7 +72,9 @@ export function EmailSection() {
 	return (
 		<div className={classes.wrapper}>
 			<div className={classes.body}>
-				<Title className={classes.title}>Wait a minute...</Title>
+				<Title order={4} className={classes.title}>
+					Wait a minute...
+				</Title>
 				<Text fw={500} fz="lg" mb={5}>
 					Subscribe to our newsletter!
 				</Text>

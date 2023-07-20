@@ -10,14 +10,6 @@ export const useGlobalTheme = ({ colorScheme }) => {
 		headings: {
 			fontFamily: 'Quicksand',
 			fontWeight: 600,
-			sizes: {
-				h1: { fontSize: '64' },
-				h2: { fontSize: '48' },
-				h3: { fontSize: '32' },
-				h4: { fontSize: '24' },
-				h5: { fontSize: '20' },
-				h6: { fontSize: '18' },
-			},
 		},
 		breakpoints: {
 			xs: '576',

@@ -1,14 +1,12 @@
-import { Card, Title } from '@mantine/core';
-import React from 'react';
+import { Card, Stack, Title } from '@mantine/core';
 import {
-	Chart as ChartJS,
 	CategoryScale,
+	Chart as ChartJS,
+	Legend,
+	LineElement,
 	LinearScale,
 	PointElement,
-	LineElement,
-	Title as ChartTitle,
 	Tooltip,
-	Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
@@ -30,16 +28,18 @@ export const data = {
 	labels,
 	datasets: [
 		{
-			label: 'Dataset 1',
+			label: 'Item A',
 			data: labels.map(() => Math.random() * 1000),
-			borderColor: 'rgb(255, 99, 132)',
-			backgroundColor: 'rgba(255, 99, 132, 0.5)',
+			tension: 0.4,
+			borderColor: '#3BC9DB',
+			backgroundColor: '#3BC9DB',
 		},
 		{
-			label: 'Dataset 2',
+			label: 'Item B',
 			data: labels.map(() => Math.random() * 1000),
-			borderColor: 'rgb(53, 162, 235)',
-			backgroundColor: 'rgba(53, 162, 235, 0.5)',
+			tension: 0.4,
+			borderColor: '#748FFC',
+			backgroundColor: '#748FFC',
 		},
 	],
 };
@@ -47,8 +47,10 @@ export const data = {
 export function OverviewCard() {
 	return (
 		<Card radius="md" w="100%" h="100%">
-			<Title order={5}>Overview</Title>
-			<Line options={options} data={data} />
+			<Stack h="100%" justify="between">
+				<Title order={5}>Overview</Title>
+				<Line options={options} data={data} />
+			</Stack>
 		</Card>
 	);
 }

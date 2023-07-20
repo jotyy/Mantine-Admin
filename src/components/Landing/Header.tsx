@@ -120,7 +120,7 @@ export function Header({ links }: HeaderActionProps) {
 					{items}
 				</Group>
 				<Button radius="xl" h={30}>
-					Get early access
+					Try it now
 				</Button>
 			</Container>
 		</MantineHeader>

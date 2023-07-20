@@ -1,6 +1,6 @@
 'use client';
 
-import { theme } from '@/styles/theme';
+import { useGlobalTheme } from '@/styles/theme';
 import {
 	ColorScheme,
 	ColorSchemeProvider,
@@ -25,6 +25,7 @@ const rtlCache = createEmotionCache({
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
 	const { colorScheme, direction, setColorScheme } = useConfigStore();
+	const theme = useGlobalTheme({ colorScheme });
 
 	const toggleColorScheme = (value?: ColorScheme) =>
 		setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
@@ -40,7 +41,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 						withGlobalStyles
 						withNormalizeCSS
 						emotionCache={direction === 'rtl' ? rtlCache : undefined}
-						theme={{ ...theme, colorScheme, dir: direction }}
+						theme={{ ...theme, dir: direction }}
 					>
 						<ModalsProvider>{children}</ModalsProvider>
 						<Notifications />

@@ -10,6 +10,7 @@ const useStyles = createStyles(theme => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-around',
+		padding: `calc(${theme.spacing.xl} * 2) 0`,
 		backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
 
 		[theme.fn.smallerThan('sm')]: {
@@ -31,6 +32,7 @@ const useStyles = createStyles(theme => ({
 		paddingRight: `calc(${theme.spacing.xl} * 4)`,
 
 		[theme.fn.smallerThan('sm')]: {
+			maxWidth: '90%',
 			paddingRight: 0,
 			marginTop: theme.spacing.xl,
 		},
@@ -70,7 +72,9 @@ export function EmailSection() {
 	return (
 		<div className={classes.wrapper}>
 			<div className={classes.body}>
-				<Title className={classes.title}>Wait a minute...</Title>
+				<Title order={4} className={classes.title}>
+					Wait a minute...
+				</Title>
 				<Text fw={500} fz="lg" mb={5}>
 					Subscribe to our newsletter!
 				</Text>

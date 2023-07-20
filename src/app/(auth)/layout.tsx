@@ -22,7 +22,7 @@ export default function AuthLayout({ children }: Props) {
 				<Title
 					align="center"
 					sx={theme => ({
-						fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+						fontSize: 42,
 						fontWeight: 900,
 					})}
 				>

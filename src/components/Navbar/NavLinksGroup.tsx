@@ -32,7 +32,7 @@ const useStyles = createStyles(theme => ({
 	},
 
 	activeControl: {
-		color: theme.colors.indigo,
+		fontWeight: 700,
 	},
 
 	link: {
@@ -58,7 +58,7 @@ const useStyles = createStyles(theme => ({
 	activeLink: {
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-		color: theme.colors.indigo,
+		color: theme.colorScheme === 'dark' ? theme.colors.white : theme.colors.dark,
 	},
 
 	chevron: {

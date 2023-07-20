@@ -18,6 +18,7 @@ import {
 	IconBrandPlanetscale,
 	IconBrandReact,
 } from '@tabler/icons-react';
+import Tilt from 'react-parallax-tilt';
 
 export const featuresData = [
 	{
@@ -55,17 +56,19 @@ interface FeatureProps {
 
 export function Feature({ icon: Icon, title, description }: FeatureProps) {
 	return (
-		<Paper shadow="md" px="lg" py="sm" radius="md" withBorder>
-			<ThemeIcon variant="light" size={60} radius={60}>
-				<Icon size="2rem" stroke={1.5} />
-			</ThemeIcon>
-			<Text mt="sm" mb={7} fw="600">
-				{title}
-			</Text>
-			<Text size="sm" color="dimmed" sx={{ lineHeight: 1.6 }}>
-				{description}
-			</Text>
-		</Paper>
+		<Tilt>
+			<Paper h="100%" shadow="md" px="lg" py="sm" radius="md" withBorder>
+				<ThemeIcon variant="light" size={60} radius={60}>
+					<Icon size="2rem" stroke={1.5} />
+				</ThemeIcon>
+				<Text mt="sm" mb={7} fw="600">
+					{title}
+				</Text>
+				<Text size="sm" color="dimmed" sx={{ lineHeight: 1.6 }}>
+					{description}
+				</Text>
+			</Paper>
+		</Tilt>
 	);
 }
 
@@ -82,7 +85,7 @@ const useStyles = createStyles(theme => ({
 		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 		fontWeight: 900,
 		lineHeight: 1.05,
-		fontSize: rem(64),
+		fontSize: rem(60),
 
 		[theme.fn.smallerThan('md')]: {
 			maxWidth: '100%',

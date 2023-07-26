@@ -5,13 +5,10 @@ import {
 	Header,
 	Stack,
 	TextInput,
-	createStyles
+	createStyles,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import {
-	IconSearch,
-	IconSettings
-} from '@tabler/icons-react';
+import { IconSearch, IconSettings } from '@tabler/icons-react';
 import { DirectionSwitcher } from '../DirectionSwitcher/DirectionSwitcher';
 import { Logo } from '../Logo/Logo';
 import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
@@ -45,10 +42,10 @@ export function AdminHeader({ burger }: Props) {
 				placeholder="Search"
 				variant="filled"
 				icon={<IconSearch size="0.8rem" />}
-				sx={(theme) => ({
+				sx={theme => ({
 					[theme.fn.smallerThan('md')]: {
 						display: 'none',
-					}
+					},
 				})}
 			/>
 			<ActionIcon onClick={open}>

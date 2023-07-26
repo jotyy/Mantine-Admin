@@ -28,7 +28,7 @@ const useStyle = createStyles(theme => ({
 
 		[theme.fn.smallerThan('md')]: {
 			flexDirection: 'column',
-		}
+		},
 	},
 }));
 

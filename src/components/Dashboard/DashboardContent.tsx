@@ -15,7 +15,7 @@ export function DashboardContent() {
 				<ProfileCard />
 			</Grid.Col>
 			<Grid.Col sm={12} md={12} lg={8}>
-				<Flex direction="column" h="100%" justify="space-between" gap='md'>
+				<Flex direction="column" h="100%" justify="space-between" gap="md">
 					<WelcomeCard />
 					<StatsGroup data={mockData} />
 				</Flex>

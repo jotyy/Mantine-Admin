@@ -4,7 +4,16 @@ import { AdminHeader } from '@/components/Headers/AdminHeader';
 import { Logo } from '@/components/Logo/Logo';
 import { Navbar } from '@/components/Navbar/Navbar';
 import { navLinks } from '@/config';
-import { AppShell, Burger, Container, Footer, Group, Header, MediaQuery, Text } from '@mantine/core';
+import {
+	AppShell,
+	Burger,
+	Container,
+	Footer,
+	Group,
+	Header,
+	MediaQuery,
+	Text,
+} from '@mantine/core';
 import { IconSettings2 } from '@tabler/icons-react';
 import { useState } from 'react';
 
@@ -41,9 +50,9 @@ export default function DashboardLayout({ children }: Props) {
 					</Text>
 				</Footer>
 			}
-			sx={(theme) => ({
-				backgroundColor: theme.colorScheme ===
-					'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+			sx={theme => ({
+				backgroundColor:
+					theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
 				minHeight: '100vh',
 			})}
 		>

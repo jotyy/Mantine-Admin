@@ -66,8 +66,8 @@ export function PaginationTable() {
 			isLoading,
 			showAlertBanner: isError,
 			showProgressBars: isFetching,
-		}
-	})
+		},
+	});
 
 	return (
 		<Paper withBorder radius="md" p="md" mt="lg">

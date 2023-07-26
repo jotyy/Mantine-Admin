@@ -118,7 +118,7 @@ export function Header({ links }: HeaderActionProps) {
 					<Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
 					<Logo />
 				</Group>
-				<Group spacing='sm' className={classes.links}>
+				<Group spacing="sm" className={classes.links}>
 					{items}
 				</Group>
 				<Button radius="xl" h={30}>
@@ -126,7 +126,7 @@ export function Header({ links }: HeaderActionProps) {
 				</Button>
 
 				<Drawer opened={opened} onClose={toggle} size="md" padding="xl">
-					<Stack spacing='md' pt="lg">
+					<Stack spacing="md" pt="lg">
 						{items}
 					</Stack>
 				</Drawer>

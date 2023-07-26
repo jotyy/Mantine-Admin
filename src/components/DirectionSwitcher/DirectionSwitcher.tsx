@@ -1,3 +1,5 @@
+'use client';
+
 import { useConfigStore } from '@/stores/config';
 import { Group, Radio } from '@mantine/core';
 

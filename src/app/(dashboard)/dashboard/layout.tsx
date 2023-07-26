@@ -1,20 +1,9 @@
 'use client';
 
 import { AdminHeader } from '@/components/Headers/AdminHeader';
-import { Logo } from '@/components/Logo/Logo';
 import { Navbar } from '@/components/Navbar/Navbar';
 import { navLinks } from '@/config';
-import {
-	AppShell,
-	Burger,
-	Container,
-	Footer,
-	Group,
-	Header,
-	MediaQuery,
-	Text,
-} from '@mantine/core';
-import { IconSettings2 } from '@tabler/icons-react';
+import { AppShell, Burger, Container, Footer, MediaQuery, Text } from '@mantine/core';
 import { useState } from 'react';
 
 interface Props {

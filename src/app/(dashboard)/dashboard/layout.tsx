@@ -1,9 +1,11 @@
 'use client';
 
 import { AdminHeader } from '@/components/Headers/AdminHeader';
+import { Logo } from '@/components/Logo/Logo';
 import { Navbar } from '@/components/Navbar/Navbar';
 import { navLinks } from '@/config';
-import { AppShell, Burger, Container, Footer, MediaQuery, Text } from '@mantine/core';
+import { AppShell, Burger, Container, Footer, Group, Header, MediaQuery, Text } from '@mantine/core';
+import { IconSettings2 } from '@tabler/icons-react';
 import { useState } from 'react';
 
 interface Props {
@@ -15,19 +17,13 @@ export default function DashboardLayout({ children }: Props) {
 
 	return (
 		<AppShell
-			layout="alt"
-			sx={theme => ({
-				main: {
-					backgroundColor:
-						theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[1],
-				},
-			})}
+			fixed
 			navbar={<Navbar data={navLinks} hidden={!opened} />}
-			navbarOffsetBreakpoint="sm"
+			navbarOffsetBreakpoint="md"
 			header={
 				<AdminHeader
 					burger={
-						<MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+						<MediaQuery largerThan="md" styles={{ display: 'none' }}>
 							<Burger
 								opened={opened}
 								onClick={() => setOpened(o => !o)}
@@ -45,6 +41,11 @@ export default function DashboardLayout({ children }: Props) {
 					</Text>
 				</Footer>
 			}
+			sx={(theme) => ({
+				backgroundColor: theme.colorScheme ===
+					'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+				minHeight: '100vh',
+			})}
 		>
 			<Container fluid>{children}</Container>
 		</AppShell>

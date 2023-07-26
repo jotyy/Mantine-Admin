@@ -1,28 +1,20 @@
 import {
 	ActionIcon,
-	Avatar,
 	Box,
 	Drawer,
 	Header,
-	Menu,
-	Space,
 	Stack,
-	Text,
 	TextInput,
-	createStyles,
+	createStyles
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
-	IconArrowsLeftRight,
-	IconMessageCircle,
-	IconPhoto,
 	IconSearch,
-	IconSettings,
-	IconTrash,
+	IconSettings
 } from '@tabler/icons-react';
-import { useState } from 'react';
-import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 import { DirectionSwitcher } from '../DirectionSwitcher/DirectionSwitcher';
+import { Logo } from '../Logo/Logo';
+import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 
 interface Props {
 	burger?: React.ReactNode;
@@ -30,13 +22,13 @@ interface Props {
 
 const useStyles = createStyles(theme => ({
 	header: {
-		padding: theme.spacing.md,
+		padding: `${theme.spacing.md} ${theme.spacing.lg}`,
 		color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+		gap: theme.spacing.md,
 		display: 'flex',
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'space-between',
-		boxShadow: '1px 1px 3px rgba(0, 0, 0, .25)',
 	},
 }));
 
@@ -47,12 +39,18 @@ export function AdminHeader({ burger }: Props) {
 	return (
 		<Header height={60} withBorder={false} className={classes.header}>
 			{burger && burger}
+			<Logo />
+			<Box sx={{ flex: 1 }} />
 			<TextInput
 				placeholder="Search"
 				variant="filled"
 				icon={<IconSearch size="0.8rem" />}
+				sx={(theme) => ({
+					[theme.fn.smallerThan('md')]: {
+						display: 'none',
+					}
+				})}
 			/>
-			<Box sx={{ flex: 1 }} />
 			<ActionIcon onClick={open}>
 				<IconSettings size="1.25rem" />
 			</ActionIcon>

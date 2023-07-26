@@ -1,3 +1,5 @@
+'use client';
+
 import {
 	ActionIcon,
 	Box,
@@ -52,7 +54,13 @@ export function AdminHeader({ burger }: Props) {
 				<IconSettings size="1.25rem" />
 			</ActionIcon>
 
-			<Drawer opened={opened} onClose={close} title="Settings" position="right">
+			<Drawer
+				opened={opened}
+				onClose={close}
+				title="Settings"
+				position="right"
+				transitionProps={{ duration: 0 }}
+			>
 				<Stack spacing="lg">
 					<ThemeSwitcher />
 					<DirectionSwitcher />

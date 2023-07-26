@@ -1,3 +1,5 @@
+'use client';
+
 import { ColorScheme, Group, Radio, useMantineColorScheme } from '@mantine/core';
 import { useState } from 'react';
 

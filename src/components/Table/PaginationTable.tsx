@@ -1,5 +1,6 @@
 'use client';
 
+import { useCustomTable } from '@/hooks/use-custom-table';
 import { useProducts } from '@/services/products';
 import { Product } from '@/services/products/types';
 import { Badge, Paper, Rating, Space, Title } from '@mantine/core';
@@ -23,7 +24,7 @@ export function PaginationTable() {
 			{
 				accessorKey: 'price',
 				header: 'Price',
-				accessorFn: row => `$${row.price.toFixed(2)}`,
+				accessorFn: row => `$${(row.price ?? 0).toFixed(2)}`,
 			},
 			{
 				accessorKey: 'category',
@@ -57,39 +58,22 @@ export function PaginationTable() {
 		[]
 	);
 
+	const table = useCustomTable({
+		columns,
+		data: data ?? [],
+		rowCount: data?.length ?? 0,
+		state: {
+			isLoading,
+			showAlertBanner: isError,
+			showProgressBars: isFetching,
+		}
+	})
+
 	return (
 		<Paper withBorder radius="md" p="md" mt="lg">
 			<Title order={5}>Pagintion Example</Title>
 			<Space h="md" />
-			<MantineReactTable
-				columns={columns}
-				data={data ?? []}
-				initialState={{ density: 'md' }}
-				enableDensityToggle={false}
-				mantinePaperProps={{ shadow: '0', withBorder: false }}
-				mantineFilterTextInputProps={{
-					sx: { borderBottom: 'unset', marginTop: '8px' },
-					variant: 'filled',
-				}}
-				mantineFilterSelectProps={{
-					sx: { borderBottom: 'unset', marginTop: '8px' },
-					variant: 'filled',
-				}}
-				mantineToolbarAlertBannerProps={
-					isError
-						? {
-								color: 'error',
-								children: 'Error fetching data',
-						  }
-						: undefined
-				}
-				rowCount={data?.length ?? 0}
-				state={{
-					isLoading,
-					showAlertBanner: isError,
-					showProgressBars: isFetching,
-				}}
-			/>
+			<MantineReactTable table={table} />
 		</Paper>
 	);
 }

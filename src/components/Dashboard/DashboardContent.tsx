@@ -11,19 +11,19 @@ import { WelcomeCard } from './WelcomeCard';
 export function DashboardContent() {
 	return (
 		<Grid>
-			<Grid.Col span={4}>
+			<Grid.Col sm={12} md={12} lg={4}>
 				<ProfileCard />
 			</Grid.Col>
-			<Grid.Col span={8}>
-				<Flex direction="column" h="100%" justify="space-between">
+			<Grid.Col sm={12} md={12} lg={8}>
+				<Flex direction="column" h="100%" justify="space-between" gap='md'>
 					<WelcomeCard />
 					<StatsGroup data={mockData} />
 				</Flex>
 			</Grid.Col>
-			<Grid.Col span={8}>
+			<Grid.Col sm={12} md={12} lg={8}>
 				<BalanceCard />
 			</Grid.Col>
-			<Grid.Col span={4}>
+			<Grid.Col sm={12} md={12} lg={4}>
 				<OverviewCard />
 			</Grid.Col>
 		</Grid>

@@ -11,6 +11,8 @@ import {
 	Burger,
 	rem,
 	Title,
+	Drawer,
+	Stack,
 } from '@mantine/core';
 import { Logo } from '@/components/Logo/Logo';
 import { useDisclosure } from '@mantine/hooks';
@@ -116,12 +118,18 @@ export function Header({ links }: HeaderActionProps) {
 					<Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
 					<Logo />
 				</Group>
-				<Group spacing={5} className={classes.links}>
+				<Group spacing='sm' className={classes.links}>
 					{items}
 				</Group>
 				<Button radius="xl" h={30}>
 					Try it now
 				</Button>
+
+				<Drawer opened={opened} onClose={toggle} size="md" padding="xl">
+					<Stack spacing='md' pt="lg">
+						{items}
+					</Stack>
+				</Drawer>
 			</Container>
 		</MantineHeader>
 	);

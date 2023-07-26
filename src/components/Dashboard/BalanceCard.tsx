@@ -13,7 +13,6 @@ import {
 	rem,
 } from '@mantine/core';
 import { IconArrowRight, IconArrowUp } from '@tabler/icons-react';
-import { BalanceChart } from './BalanceChart';
 
 const useStyle = createStyles(theme => ({
 	section: {
@@ -24,7 +23,12 @@ const useStyle = createStyles(theme => ({
 
 		display: 'flex',
 		flexDirection: 'row',
+		gap: theme.spacing.md,
 		justifyContent: 'space-between',
+
+		[theme.fn.smallerThan('md')]: {
+			flexDirection: 'column',
+		}
 	},
 }));
 

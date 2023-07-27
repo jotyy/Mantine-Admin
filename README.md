@@ -12,7 +12,7 @@
   <img src="./public/static/images/banner.png" alt="Mantine Admin Banner" width="512px" />
 </p>
 <h3 align="center">
-  💻 A Modern Admin Dashboard made with Mantine/React/NextJS!
+  💻 A Modern Dashboard with Next.js.!
 </h3>
 
 ---
@@ -59,9 +59,6 @@ Deploy your own copy of this template in just a few clicks!
 <div>
  <a href="https://vercel.com/import/project?template=https://github.com/jotyy/mantine-admin" title="Deploy to Vercel">
   <img src="https://vercel.com/button" alt="Deploy to Vercel" />
- </a>
- <a href="https://app.netlify.com/start/deploy?repository=https://github.com/jotyy/mantine-admin" title="Deploy to Netlify">
-  <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
  </a>
 
 <!-- Introduction Section -->

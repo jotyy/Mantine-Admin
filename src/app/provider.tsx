@@ -14,6 +14,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useConfigStore } from '@/stores/config';
 import rtlPlugin from 'stylis-plugin-rtl';
 import RootStyleRegistry from './emotion';
+import { Analytics } from '@/components/Analytics/Analytics';
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 					>
 						<ModalsProvider>{children}</ModalsProvider>
 						<Notifications />
+						<Analytics />
 					</MantineProvider>
 				</ColorSchemeProvider>
 			</RootStyleRegistry>

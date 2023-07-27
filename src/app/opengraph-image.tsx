@@ -57,20 +57,21 @@ export default async function Image() {
 						display: 'flex',
 						flexWrap: 'wrap',
 						justifyContent: 'center',
-						padding: '20px 40px',
+						padding: '100px 0px',
 						margin: '0 42px',
 						fontSize: 40,
 						width: 'auto',
-						maxWidth: 550,
+						maxWidth: 800,
 						textAlign: 'center',
-						backgroundColor: 'black',
+						backgroundImage: 'linear-gradient(to right, #434343 0%, black 100%)',
 						color: 'white',
 						lineHeight: 1.4,
 					}}
 				>
-					Mantine Admin
-					<br />
-					<p style={{ fontSize: 28, margin: 0 }}>A Modern Dashboard with Next.js.</p>
+					<h2 style={{ margin: 0 }}>Mantine Admin</h2>
+					<p style={{ fontSize: 36, margin: 0, opacity: 0.8 }}>
+						A Modern Dashboard with Next.js.
+					</p>
 				</div>
 			</div>
 		),

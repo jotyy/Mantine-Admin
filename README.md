@@ -9,7 +9,7 @@
 
 <!-- Banner Section -->
 <p align="center">
-  <img src="https://mantine-admin.vercel.app/opengraph-image?66661d3833f68a95" alt="Mantine Admin Banner" width="512px" />
+  <img src="https://mantine-admin.vercel.app/opengraph-image?fa8e5bee628673a0" alt="Mantine Admin Banner" width="512px" />
 </p>
 <h3 align="center">
   💻 A Modern Dashboard with Next.js.!

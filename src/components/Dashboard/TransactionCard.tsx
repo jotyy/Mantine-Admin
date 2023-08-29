@@ -228,37 +228,34 @@ const data: Block[] = [
 export function TransactionCard() {
 	const { classes } = useStyle();
 
-	const columns = useMemo<MRT_ColumnDef<Block>[]>(
-		() => [
-			{
-				accessorKey: 'number',
-				header: 'Number',
-			},
-			{
-				accessorKey: 'hash',
-				accessorFn: row => row.hash.slice(0, 10) + '..',
-				header: 'Hash',
-			},
-			{
-				accessorKey: 'number_of_transactions',
-				header: 'Transactions',
-			},
-			{
-				accessorKey: 'number_of_rewards',
-				header: 'Block Rewards',
-			},
-			{
-				accessorKey: 'producer',
-				header: 'Validator',
-			},
-			{
-				accessorKey: 'block_time',
-				accessorFn: row => new Date(row.block_time * 1000).toLocaleString(),
-				header: 'Age',
-			},
-		],
-		[]
-	);
+	const columns: MRT_ColumnDef<Block>[] = [
+		{
+			accessorKey: 'number',
+			header: 'Number',
+		},
+		{
+			accessorKey: 'hash',
+			accessorFn: row => row.hash.slice(0, 10) + '..',
+			header: 'Hash',
+		},
+		{
+			accessorKey: 'number_of_transactions',
+			header: 'Transactions',
+		},
+		{
+			accessorKey: 'number_of_rewards',
+			header: 'Block Rewards',
+		},
+		{
+			accessorKey: 'producer',
+			header: 'Validator',
+		},
+		{
+			accessorKey: 'block_time',
+			accessorFn: row => new Date(row.block_time * 1000).toLocaleString(),
+			header: 'Age',
+		},
+	];
 
 	const table = useCustomTable({
 		columns,

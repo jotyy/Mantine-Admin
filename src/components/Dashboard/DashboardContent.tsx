@@ -7,6 +7,7 @@ import { BalanceCard } from './BalanceCard';
 import { OverviewCard } from './OverviewCard';
 import { ProfileCard } from './ProfileCard';
 import { WelcomeCard } from './WelcomeCard';
+import { TransactionCard } from './TransactionCard';
 
 export function DashboardContent() {
 	return (
@@ -25,6 +26,9 @@ export function DashboardContent() {
 			</Grid.Col>
 			<Grid.Col sm={12} md={12} lg={4}>
 				<OverviewCard />
+			</Grid.Col>
+			<Grid.Col sm={12}>
+				<TransactionCard />
 			</Grid.Col>
 		</Grid>
 	);

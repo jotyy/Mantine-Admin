@@ -31,8 +31,8 @@ export const data = {
 			label: 'Item A',
 			data: labels.map(() => Math.random() * 1000),
 			tension: 0.4,
-			borderColor: '#3BC9DB',
-			backgroundColor: '#3BC9DB',
+			borderColor: '#0891b2',
+			backgroundColor: '#0891b2',
 		},
 		{
 			label: 'Item B',
@@ -46,11 +46,14 @@ export const data = {
 
 export function OverviewCard() {
 	return (
-		<Card radius="md" w="100%" h="100%">
-			<Stack h="100%" justify="between">
-				<Title order={5}>Overview</Title>
-				<Line options={options} data={data} />
-			</Stack>
+		<Card
+			radius="md"
+			w="100%"
+			h="100%"
+			sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+		>
+			<Title order={5}>Overview</Title>
+			<Line options={options} data={data} />
 		</Card>
 	);
 }

@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-page-custom-font */
+import { quickSand } from '@/styles/ fonts';
 import { AppProvider } from './provider';
 
 export const metadata = {
@@ -27,13 +27,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en-US">
-			<head>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Quicksand:wght@200;300;400;500;600;700;800&display=swap"
-					rel="stylesheet"
-				/>
-			</head>
+		<html lang="en-US" className={quickSand.className}>
 			<body>
 				<AppProvider>{children}</AppProvider>
 			</body>

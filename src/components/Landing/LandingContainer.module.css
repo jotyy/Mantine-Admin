@@ -1,0 +1,6 @@
+.box {
+	display: flex;
+	flex-direction: column;
+	color: lightdark(var(--mantine-colors-black), var(--mantine-colors-white));
+	background: lightdark(var(--mantine-colors-gray-1), var(--mantine-colors-gray-9));
+}

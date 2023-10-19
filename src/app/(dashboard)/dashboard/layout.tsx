@@ -3,49 +3,51 @@
 import { AdminHeader } from '@/components/Headers/AdminHeader';
 import { Navbar } from '@/components/Navbar/Navbar';
 import { navLinks } from '@/config';
-import { AppShell, Burger, Container, Footer, MediaQuery, Text } from '@mantine/core';
-import { useState } from 'react';
+import {
+	AppShell,
+	Burger,
+	Container,
+	Text,
+	useMantineColorScheme,
+	useMantineTheme,
+} from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 
 interface Props {
 	children: React.ReactNode;
 }
 
 export default function DashboardLayout({ children }: Props) {
-	const [opened, setOpened] = useState(false);
+	const [opened, { toggle }] = useDisclosure();
+	const { colorScheme } = useMantineColorScheme();
+	const theme = useMantineTheme();
+
+	const bg = colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0];
 
 	return (
 		<AppShell
-			fixed
-			navbar={<Navbar data={navLinks} hidden={!opened} />}
-			navbarOffsetBreakpoint="md"
-			header={
+			header={{ height: 60 }}
+			navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+			padding="md"
+			transitionDuration={500}
+			transitionTimingFunction="ease"
+		>
+			<AppShell.Navbar>
+				<Navbar data={navLinks} hidden={!opened} />
+			</AppShell.Navbar>
+			<AppShell.Header>
 				<AdminHeader
 					burger={
-						<MediaQuery largerThan="md" styles={{ display: 'none' }}>
-							<Burger
-								opened={opened}
-								onClick={() => setOpened(o => !o)}
-								size="sm"
-								mr="xl"
-							/>
-						</MediaQuery>
+						<Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" mr="xl" />
 					}
 				/>
-			}
-			footer={
-				<Footer height={50} p="md">
-					<Text w="full" size="sm" align="center" color="gray">
-						CopyRight © 2023 Jotyy
-					</Text>
-				</Footer>
-			}
-			sx={theme => ({
-				backgroundColor:
-					theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-				minHeight: '100vh',
-			})}
-		>
-			<Container fluid>{children}</Container>
+			</AppShell.Header>
+			<AppShell.Main bg={bg}>{children}</AppShell.Main>
+			<AppShell.Footer>
+				<Text w="full" size="sm" c="gray">
+					CopyRight © 2023 Jotyy
+				</Text>
+			</AppShell.Footer>
 		</AppShell>
 	);
 }

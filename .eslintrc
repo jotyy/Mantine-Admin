@@ -5,13 +5,8 @@
 		"node": true,
 		"jest": true
 	},
-	"extends": [
-		"next",
-		"plugin:@next/next/recommended",
-		"next/core-web-vitals",
-		"prettier"
-	],
-	"plugins": ["prettier", "@typescript-eslint", "testing-library"],
+	"extends": ["mantine", "next", "plugin:@next/next/recommended", "next/core-web-vitals"],
+	"plugins": ["@typescript-eslint", "testing-library"],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaFeatures": {

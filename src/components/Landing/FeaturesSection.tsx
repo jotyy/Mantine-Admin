@@ -8,8 +8,6 @@ import {
 	Text,
 	ThemeIcon,
 	Title,
-	createStyles,
-	rem,
 } from '@mantine/core';
 import {
 	IconBrandMantine,
@@ -18,7 +16,7 @@ import {
 	IconBrandPlanetscale,
 	IconBrandReact,
 } from '@tabler/icons-react';
-import Tilt from 'react-parallax-tilt';
+import classes from './FeatureSection.module.css';
 
 export const featuresData = [
 	{
@@ -56,52 +54,19 @@ interface FeatureProps {
 
 export function Feature({ icon: Icon, title, description }: FeatureProps) {
 	return (
-		<Tilt>
-			<Paper h="100%" shadow="md" px="lg" py="sm" radius="md" withBorder>
-				<ThemeIcon variant="light" size={60} radius={60}>
-					<Icon size="2rem" stroke={1.5} />
-				</ThemeIcon>
-				<Text mt="sm" mb={7} fw="600">
-					{title}
-				</Text>
-				<Text size="sm" color="dimmed" sx={{ lineHeight: 1.6 }}>
-					{description}
-				</Text>
-			</Paper>
-		</Tilt>
+		<Paper h="100%" shadow="md" px="lg" py="sm" radius="md" withBorder>
+			<ThemeIcon variant="light" size={60} radius={60}>
+				<Icon size="2rem" stroke={1.5} />
+			</ThemeIcon>
+			<Text mt="sm" mb={7} fw="600">
+				{title}
+			</Text>
+			<Text size="sm" c="dimmed" style={{ lineHeight: 1.6 }}>
+				{description}
+			</Text>
+		</Paper>
 	);
 }
-
-const useStyles = createStyles(theme => ({
-	wrapper: {
-		paddingTop: `calc(${theme.spacing.xl} * 4)`,
-		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-	},
-
-	title: {
-		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-		fontWeight: 900,
-		lineHeight: 1.05,
-		fontSize: rem(60),
-
-		[theme.fn.smallerThan('md')]: {
-			maxWidth: '100%',
-			fontSize: rem(34),
-			lineHeight: 1.15,
-		},
-	},
-
-	description: {
-		textAlign: 'center',
-
-		[theme.fn.smallerThan('sm')]: {
-			textAlign: 'left',
-		},
-	},
-}));
 
 interface FeaturesGridProps {
 	title: React.ReactNode;
@@ -114,7 +79,6 @@ export function FeaturesSection({
 	description,
 	data = featuresData,
 }: FeaturesGridProps) {
-	const { classes } = useStyles();
 	const features = data.map((feature, index) => <Feature {...feature} key={index} />);
 
 	return (
@@ -130,12 +94,8 @@ export function FeaturesSection({
 
 			<SimpleGrid
 				mt={60}
-				cols={3}
-				spacing="xl"
-				breakpoints={[
-					{ maxWidth: 'md', cols: 2, spacing: 'xl' },
-					{ maxWidth: 'sm', cols: 1, spacing: 'xl' },
-				]}
+				cols={{ base: 1, sm: 2, lg: 3 }}
+				spacing={{ base: 'lg', md: 'lg', lg: 'xl' }}
 			>
 				{features}
 			</SimpleGrid>

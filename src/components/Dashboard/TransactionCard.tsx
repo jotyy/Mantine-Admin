@@ -1,27 +1,9 @@
 'use client';
 
 import { useCustomTable } from '@/hooks/use-custom-table';
-import { Card, Title, createStyles, rem } from '@mantine/core';
+import { Card, Title } from '@mantine/core';
 import { MRT_ColumnDef, MantineReactTable } from 'mantine-react-table';
-import { useMemo } from 'react';
-
-const useStyle = createStyles(theme => ({
-	section: {
-		padding: theme.spacing.md,
-		borderTop: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-		}`,
-
-		display: 'flex',
-		flexDirection: 'row',
-		gap: theme.spacing.md,
-		justifyContent: 'space-between',
-
-		[theme.fn.smallerThan('md')]: {
-			flexDirection: 'column',
-		},
-	},
-}));
+import classes from './Dashboard.module.css';
 
 type Block = {
 	epoch: number;
@@ -226,8 +208,6 @@ const data: Block[] = [
 ];
 
 export function TransactionCard() {
-	const { classes } = useStyle();
-
 	const columns: MRT_ColumnDef<Block>[] = [
 		{
 			accessorKey: 'number',

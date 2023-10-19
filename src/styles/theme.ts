@@ -1,15 +1,14 @@
-import { MantineThemeOverride } from '@mantine/core';
+import { createTheme } from '@mantine/core';
 
 export const useGlobalTheme = ({ colorScheme }) => {
 	const isDark = colorScheme === 'dark';
 
-	const globalTheme: MantineThemeOverride = {
-		colorScheme,
+	const globalTheme = createTheme({
 		fontFamily: 'Quicksand',
 		fontFamilyMonospace: 'Disket Mono, Quicksand, monospace',
 		headings: {
 			fontFamily: 'Quicksand',
-			fontWeight: 600,
+			fontWeight: '600',
 		},
 		colors: {
 			'more-dark': [
@@ -51,8 +50,8 @@ export const useGlobalTheme = ({ colorScheme }) => {
 		},
 		primaryColor: isDark ? 'little-light' : 'more-dark',
 		defaultRadius: 'sm',
-		loader: 'dots',
-	};
+		// loader: 'dots',
+	});
 
 	return globalTheme;
 };

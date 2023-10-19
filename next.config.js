@@ -6,6 +6,9 @@ module.exports = async _phase => {
 	const nextConfig = {
 		reactStrictMode: true,
 		swcMinify: true,
+		experimental: {
+			optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
+		},
 	};
 
 	return withPlugins(

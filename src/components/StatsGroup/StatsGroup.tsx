@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, Group, SimpleGrid, Text, useMantineTheme } from '@mantine/core';
 import { IconArrowDownRight, IconArrowUpRight } from '@tabler/icons-react';
 
@@ -12,7 +14,7 @@ export function StatsGroup({ data }: StatsGroupProps) {
 
 		return (
 			<Card key={stat.title} p="md" radius="md">
-				<Group position="apart">
+				<Group>
 					<div>
 						<Text c="dimmed" tt="uppercase" fw={700} fz="xs">
 							{stat.title}
@@ -35,9 +37,5 @@ export function StatsGroup({ data }: StatsGroupProps) {
 		);
 	});
 
-	return (
-		<SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-			{stats}
-		</SimpleGrid>
-	);
+	return <SimpleGrid cols={{ sm: 1, md: 3 }}>{stats}</SimpleGrid>;
 }

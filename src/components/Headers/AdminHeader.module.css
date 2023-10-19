@@ -1,0 +1,9 @@
+.header {
+	padding: var(--mantine-spacing-md) var(--mantine-spacing-lg);
+	color: lightdark(var(--mantine-color-white), var(--mantine-color-dark));
+	gap: var(--mantine-spacing-md);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}

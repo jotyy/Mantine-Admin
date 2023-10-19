@@ -50,7 +50,11 @@ export function OverviewCard() {
 			radius="md"
 			w="100%"
 			h="100%"
-			sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+			style={{
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'space-between',
+			}}
 		>
 			<Title order={5}>Overview</Title>
 			<Line options={options} data={data} />

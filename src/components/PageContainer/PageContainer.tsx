@@ -7,7 +7,6 @@ import {
 	ContainerProps,
 	Space,
 	Title,
-	useMantineTheme,
 } from '@mantine/core';
 import { FC, ReactNode } from 'react';
 
@@ -23,9 +22,6 @@ export const PageContainer: FC<PageContainerProps> = ({
 	items,
 	fluid = true,
 }) => {
-	const theme = useMantineTheme();
-	const titleColor = theme.colorScheme === 'dark' ? 'gray' : 'dark';
-
 	return (
 		<Container px={0} fluid={fluid}>
 			{items && items.length > 0 ? (
@@ -38,9 +34,7 @@ export const PageContainer: FC<PageContainerProps> = ({
 				</Breadcrumbs>
 			) : null}
 
-			<Title order={4} color={titleColor}>
-				{title}
-			</Title>
+			<Title order={4}>{title}</Title>
 
 			<Space h="lg" />
 

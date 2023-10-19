@@ -1,4 +1,6 @@
-import { Flex, Text, useMantineTheme } from '@mantine/core';
+'use client';
+
+import { Flex, Text, useMantineColorScheme } from '@mantine/core';
 import Link from 'next/link';
 interface Props {
 	width?: string;
@@ -6,15 +8,12 @@ interface Props {
 }
 
 export const Logo: React.FC<Props> = () => {
-	const theme = useMantineTheme();
+	const { colorScheme } = useMantineColorScheme();
+
 	return (
 		<Flex direction="row" align="center" gap={4}>
 			<Link href="/" style={{ textDecoration: 'none' }}>
-				<Text
-					color={theme.colorScheme === 'light' ? 'dark' : 'white'}
-					fw="bolder"
-					size="xl"
-				>
+				<Text c={colorScheme === 'light' ? 'dark' : 'white'} fw="bolder" size="xl">
 					Mantine
 					<Text component="span" fw="normal" c="gray">
 						Admin

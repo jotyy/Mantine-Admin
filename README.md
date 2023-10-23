@@ -91,7 +91,6 @@ This project features all the latest tools and good practices in web development
 ### Design System and Animations
 
 - 🎨 **[Mantine-UI](https://mantine.dev)** – A simple, modular and accessible component library that gives you the building blocks to build your React applications
-- 🎞️ **[Framer Motion](https://www.framer.com/motion)** – A production-ready motion library for React
 - ✨ **[Tabler Icons](https://tabler-icons-react.vercel.app)** – A collection of popular icons to React projects
 
 ### Form Validation
@@ -398,10 +397,9 @@ See below the file tree to understand the project structure.
 ┃ ┃ ┗ 📂 translations/          # Translations folder **
 ┃ ┣ 📃 favicon.ico              # Icon tab browser
 ┣ 📂 src/
-┃ ┣ 📂 animations/              # Framer Motion Animations **
 ┃ ┣ 📂 app/                   # App pages
 ┃ ┣ 📂 components/              # App Components
-┃ ┃ ┗ 📂 Motion/                # Mantine-UI + Framer components **
+┃ ┃ ┗ 📂 Motion/                # Mantine-UI components **
 ┃ ┣ 📂 hooks/                   # React Hooks **
 ┃ ┃ ┗ 📃 useFetch.ts            # SWR fetch hook (optional) **
 ┃ ┣ 📂 interfaces/              # TypeScript Interfaces

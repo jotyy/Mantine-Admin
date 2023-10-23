@@ -57,7 +57,6 @@
 		"axios": "^1.5.1",
 		"chart.js": "^4.4.0",
 		"dayjs": "^1.11.10",
-		"framer-motion": "10.16.4",
 		"mantine-react-table": "2.0.0-alpha.2",
 		"next": "13.5.5",
 		"next-compose-plugins": "2.2.1",

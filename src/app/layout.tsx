@@ -6,6 +6,7 @@ import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { Analytics } from '@vercel/analytics/react';
 import { quickSand } from '@/styles/fonts';
+import { theme } from '@/styles/theme';
 import { AppProvider } from './provider';
 
 export const metadata = {
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</head>
 			<body>
 				<DirectionProvider>
-					<MantineProvider>
+					<MantineProvider theme={theme}>
 						<ModalsProvider>
 							<AppProvider>{children}</AppProvider>
 							<Analytics />

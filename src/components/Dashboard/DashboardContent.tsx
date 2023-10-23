@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import { Flex, Grid } from '@mantine/core';
+import { Flex, Grid, GridCol } from '@mantine/core';
 import { BalanceCard } from './BalanceCard';
 import { OverviewCard } from './OverviewCard';
 import { ProfileCard } from './ProfileCard';
@@ -12,24 +12,24 @@ import { mockData } from '../StatsGroup/mock';
 export function DashboardContent() {
 	return (
 		<Grid>
-			<Grid.Col span={{ sm: 12, md: 12, lg: 4 }}>
+			<GridCol span={{ sm: 12, md: 12, lg: 4 }}>
 				<ProfileCard />
-			</Grid.Col>
-			<Grid.Col span={{ sm: 12, md: 12, lg: 8 }}>
+			</GridCol>
+			<GridCol span={{ sm: 12, md: 12, lg: 8 }}>
 				<Flex direction="column" h="100%" justify="space-between" gap="md">
 					<WelcomeCard />
 					<StatsGroup data={mockData} />
 				</Flex>
-			</Grid.Col>
-			<Grid.Col span={{ sm: 12, md: 12, lg: 8 }}>
+			</GridCol>
+			<GridCol span={{ sm: 12, md: 12, lg: 8 }}>
 				<BalanceCard />
-			</Grid.Col>
-			<Grid.Col span={{ sm: 12, md: 12, lg: 4 }}>
+			</GridCol>
+			<GridCol span={{ sm: 12, md: 12, lg: 4 }}>
 				<OverviewCard />
-			</Grid.Col>
-			<Grid.Col span={12}>
+			</GridCol>
+			<GridCol span={12}>
 				<TransactionCard />
-			</Grid.Col>
+			</GridCol>
 		</Grid>
 	);
 }

@@ -12,5 +12,4 @@ export const useProducts = () =>
 	useQuery<Product[]>({
 		queryKey: ['products'],
 		queryFn: () => getProducts(),
-		keepPreviousData: true,
 	});

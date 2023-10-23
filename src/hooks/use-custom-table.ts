@@ -36,11 +36,11 @@ export const useCustomTable = <TData extends Record<string, any> = {}>(
 				},
 			},
 			mantineFilterTextInputProps: {
-				sx: { borderBottom: 'unset', marginTop: '8px' },
+				style: { borderBottom: 'unset', marginTop: '8px' },
 				variant: 'filled',
 			},
 			mantineFilterSelectProps: {
-				sx: { borderBottom: 'unset', marginTop: '8px' },
+				style: { borderBottom: 'unset', marginTop: '8px' },
 				variant: 'filled',
 			},
 			// features

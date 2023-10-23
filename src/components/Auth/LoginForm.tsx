@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { Anchor, Button, Card, Checkbox, Group, PasswordInput, TextInput } from '@mantine/core';
 import { useRouter } from 'next/navigation';

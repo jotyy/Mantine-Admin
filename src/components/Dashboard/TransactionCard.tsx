@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, Title } from '@mantine/core';
-import { MantineReactTable, MRT_ColumnDef } from 'mantine-react-table';
+import { MRT_ColumnDef, MRT_Table } from 'mantine-react-table';
 import { useCustomTable } from '@/hooks/use-custom-table';
 import classes from './Dashboard.module.css';
 
@@ -256,7 +256,7 @@ export function TransactionCard() {
 				<Title order={5}>Latest Block</Title>
 			</Card.Section>
 			<Card.Section className={classes.section}>
-				<MantineReactTable table={table} />
+				<MRT_Table table={table} />
 			</Card.Section>
 		</Card>
 	);

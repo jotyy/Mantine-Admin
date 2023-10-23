@@ -39,8 +39,6 @@
 	},
 	"dependencies": {
 		"@builder.io/partytown": "0.8.1",
-		"@emotion/react": "11.11.1",
-		"@emotion/styled": "11.11.0",
 		"@hookform/resolvers": "3.3.2",
 		"@mantine/core": "^7.1.5",
 		"@mantine/dates": "^7.1.5",
@@ -57,7 +55,7 @@
 		"axios": "^1.5.1",
 		"chart.js": "^4.4.0",
 		"dayjs": "^1.11.10",
-		"mantine-react-table": "2.0.0-alpha.2",
+		"mantine-react-table": "2.0.0-alpha.4",
 		"next": "13.5.6",
 		"next-compose-plugins": "2.2.1",
 		"next-images": "1.8.5",

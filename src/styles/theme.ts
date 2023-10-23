@@ -1,9 +1,8 @@
+'use client'
+
 import { createTheme } from '@mantine/core';
 
-export const useGlobalTheme = ({ colorScheme }) => {
-	const isDark = colorScheme === 'dark';
-
-	const globalTheme = createTheme({
+export const theme =  createTheme({
 		fontFamily: 'Quicksand',
 		fontFamilyMonospace: 'Disket Mono, Quicksand, monospace',
 		headings: {
@@ -48,10 +47,7 @@ export const useGlobalTheme = ({ colorScheme }) => {
 				'#000000',
 			],
 		},
-		primaryColor: isDark ? 'little-light' : 'more-dark',
+		primaryColor: 'little-light',
 		defaultRadius: 'sm',
 		// loader: 'dots',
-	});
-
-	return globalTheme;
-};
+	})

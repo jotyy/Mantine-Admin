@@ -57,7 +57,7 @@ export function PaginationTable() {
 		[],
 	);
 
-	const table = useCustomTable({
+	const table = useCustomTable<Product>({
 		columns,
 		data: data ?? [],
 		rowCount: data?.length ?? 0,

@@ -1,21 +1,19 @@
-'use client';
-
-import { Flex, Text, useMantineColorScheme } from '@mantine/core';
+import { Flex, Text } from '@mantine/core';
 import Link from 'next/link';
+import classes from './Logo.module.css';
+
 interface Props {
 	width?: string;
 	height?: string;
 }
 
 export const Logo: React.FC<Props> = () => {
-	const { colorScheme } = useMantineColorScheme();
-
 	return (
 		<Flex direction="row" align="center" gap={4}>
-			<Link href="/" style={{ textDecoration: 'none' }}>
-				<Text c={colorScheme === 'light' ? 'dark' : 'white'} fw="bolder" size="xl">
+			<Link href="/" style={{ textDecoration: 'none' }} className={classes.heading}>
+				<Text fw="bolder" size="xl">
 					Mantine
-					<Text component="span" fw="normal" c="gray">
+					<Text component="span" fw="normal" className={classes.subheading}>
 						Admin
 					</Text>
 				</Text>

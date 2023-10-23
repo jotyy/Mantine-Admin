@@ -1,5 +1,3 @@
-'use client';
-
 import { Anchor, Breadcrumbs, Container, ContainerProps, Space, Title } from '@mantine/core';
 import { FC, ReactNode } from 'react';
 

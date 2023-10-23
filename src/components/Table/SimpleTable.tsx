@@ -88,7 +88,7 @@ export const SimpleTable = () => {
 				header: 'State',
 			},
 		],
-		[]
+		[],
 	);
 
 	return (

@@ -1,5 +1,5 @@
-import { fetcher } from '@/services/global/api';
 import { useQuery } from '@tanstack/react-query';
+import { fetcher } from '@/services/global/api';
 import { Product } from './types';
 
 export const getProducts = async () => {

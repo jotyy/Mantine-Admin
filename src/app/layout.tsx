@@ -1,9 +1,11 @@
-import { quickSand } from '@/styles/fonts';
-import { AppProvider } from './provider';
 import '@mantine/core/styles.css';
+import 'mantine-react-table/styles.css';
+
 import { ColorSchemeScript, DirectionProvider, MantineProvider } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
+import { quickSand } from '@/styles/fonts';
+import { AppProvider } from './provider';
 
 export const metadata = {
 	metadataBase: new URL('https://mantine-admin.vercel.app/'),

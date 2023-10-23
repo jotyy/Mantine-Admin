@@ -1,11 +1,7 @@
 'use client';
 
 import { ActionIcon, Anchor, Container, Group, Text } from '@mantine/core';
-import {
-	IconBrandInstagram,
-	IconBrandTwitter,
-	IconBrandYoutube,
-} from '@tabler/icons-react';
+import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
 import classes from './Footer.module.css';
 
 export function Footer() {

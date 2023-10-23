@@ -8,18 +8,17 @@ import {
 	Flex,
 	Group,
 	Menu,
+	rem,
 	Space,
 	Stack,
 	Text,
 	Title,
-	rem,
 } from '@mantine/core';
 import { IconDots, IconEye, IconFileZip, IconTrash } from '@tabler/icons-react';
 
 const sectionStyle = {
 	padding: 'var(--mantine-spacing-md)',
-	borderTop:
-		'1px solid lightdark(var(--mantine-colors-gray-3), var(--mantine-colors-dark-4))',
+	borderTop: '1px solid lightdark(var(--mantine-colors-gray-3), var(--mantine-colors-dark-4))',
 };
 
 export function ProfileCard() {
@@ -36,9 +35,7 @@ export function ProfileCard() {
 						</Menu.Target>
 
 						<Menu.Dropdown>
-							<Menu.Item leftSection={<IconFileZip size={rem(14)} />}>
-								Action One
-							</Menu.Item>
+							<Menu.Item leftSection={<IconFileZip size={rem(14)} />}>Action One</Menu.Item>
 							<Menu.Item leftSection={<IconEye size={rem(14)} />}>Action Two</Menu.Item>
 							<Menu.Item leftSection={<IconTrash size={rem(14)} />} color="red">
 								Action Three

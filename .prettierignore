@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 /coverage
-/.next/
+.next
 /out/
 /build
 .DS_Store
@@ -21,4 +21,3 @@ yarn-error.log*
 public/*.js
 public/*.map
 pnpm-lock.yaml
-

@@ -1,13 +1,6 @@
 'use client';
 
-import {
-	Box,
-	Collapse,
-	Group,
-	ThemeIcon,
-	UnstyledButton,
-	useDirection,
-} from '@mantine/core';
+import { Box, Collapse, Group, ThemeIcon, UnstyledButton, useDirection } from '@mantine/core';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

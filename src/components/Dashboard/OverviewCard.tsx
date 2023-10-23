@@ -3,8 +3,8 @@ import {
 	CategoryScale,
 	Chart as ChartJS,
 	Legend,
-	LineElement,
 	LinearScale,
+	LineElement,
 	PointElement,
 	Tooltip,
 } from 'chart.js';

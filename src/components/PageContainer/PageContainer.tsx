@@ -1,13 +1,6 @@
 'use client';
 
-import {
-	Anchor,
-	Breadcrumbs,
-	Container,
-	ContainerProps,
-	Space,
-	Title,
-} from '@mantine/core';
+import { Anchor, Breadcrumbs, Container, ContainerProps, Space, Title } from '@mantine/core';
 import { FC, ReactNode } from 'react';
 
 type PageContainerProps = {
@@ -16,12 +9,7 @@ type PageContainerProps = {
 	items?: { label: string; href: string }[];
 } & Pick<ContainerProps, 'fluid'>;
 
-export const PageContainer: FC<PageContainerProps> = ({
-	children,
-	title,
-	items,
-	fluid = true,
-}) => {
+export const PageContainer: FC<PageContainerProps> = ({ children, title, items, fluid = true }) => {
 	return (
 		<Container px={0} fluid={fluid}>
 			{items && items.length > 0 ? (

@@ -4,8 +4,8 @@ import { ScrollArea } from '@mantine/core';
 
 import { UserButton } from '@/components/UserButton/UserButton';
 import { NavItem } from '@/types/nav-item';
-import { NavLinksGroup } from './NavLinksGroup';
 import classes from './Navbar.module.css';
+import { NavLinksGroup } from './NavLinksGroup';
 
 interface Props {
 	data: NavItem[];

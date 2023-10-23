@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StatsGroup } from '.';
 import { mockData } from './mock';
+import { StatsGroup } from '.';
 
 const meta: Meta<typeof StatsGroup> = {
 	title: 'Components/StatsGroup',

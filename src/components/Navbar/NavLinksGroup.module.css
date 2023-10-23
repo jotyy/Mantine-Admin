@@ -8,10 +8,7 @@
 	text-decoration: none;
 
 	&:hover {
-		background-color: lightdark(
-			var(--mantine-colors-gray-1),
-			var(--mantine-colors-gray-9)
-		);
+		background-color: lightdark(var(--mantine-colors-gray-1), var(--mantine-colors-gray-9));
 		color: lightdark(var(--mantine-colors-white), var(--mantine-colors-black));
 	}
 }
@@ -29,14 +26,10 @@
 	margin-left: var(--mantine-spacing-lg);
 	font-size: var(--mantine-font-size-sm);
 	color: lightdark(var(--mantine-colors-black), var(--mantine-colors-white));
-	border-left: 1px solid
-		lightdark(var(--mantine-colors-dark-4), var(--mantine-colors-gray-3));
+	border-left: 1px solid lightdark(var(--mantine-colors-dark-4), var(--mantine-colors-gray-3));
 
 	&:hover {
-		background-color: lightdark(
-			var(--mantine-colors-gray-1),
-			var(--mantine-colors-gray-9)
-		);
+		background-color: lightdark(var(--mantine-colors-gray-1), var(--mantine-colors-gray-9));
 		color: lightdark(var(--mantine-colors-white), var(--mantine-colors-black));
 	}
 }

@@ -1,16 +1,6 @@
 'use client';
 
-import {
-	Button,
-	Card,
-	Group,
-	Select,
-	Space,
-	Stack,
-	Text,
-	Title,
-	rem,
-} from '@mantine/core';
+import { Button, Card, Group, rem, Select, Space, Stack, Text, Title } from '@mantine/core';
 import { IconArrowRight, IconArrowUp } from '@tabler/icons-react';
 import classes from './Dashboard.module.css';
 

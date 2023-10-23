@@ -14,8 +14,8 @@ export function EmailSection() {
 					Subscribe to our newsletter!
 				</Text>
 				<Text fz="sm" c="dimmed">
-					You will never miss important product updates, latest news and community QA
-					sessions. Our newsletter is once a week, every Sunday.
+					You will never miss important product updates, latest news and community QA sessions. Our
+					newsletter is once a week, every Sunday.
 				</Text>
 
 				<div className={classes.controls}>

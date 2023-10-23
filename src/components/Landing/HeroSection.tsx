@@ -17,8 +17,8 @@ export function HeroSection() {
 				</Title>
 
 				<Text className={classes.description} mt={30}>
-					Build fully functional dashboard web applications with ease – Mantine-Admin
-					includes all components and hooks to cover you in any situation
+					Build fully functional dashboard web applications with ease – Mantine-Admin includes all
+					components and hooks to cover you in any situation
 				</Text>
 
 				<Group mt={40}>

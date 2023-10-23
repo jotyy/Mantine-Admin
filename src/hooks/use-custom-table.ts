@@ -12,7 +12,7 @@ export type CustomTableOptions<TData extends Record<string, any> = {}> = Omit<
 >;
 
 export const useCustomTable = <TData extends Record<string, any> = {}>(
-	tableOptions: CustomTableOptions<TData>
+	tableOptions: CustomTableOptions<TData>,
 ) => {
 	return useMantineReactTable({
 		...{

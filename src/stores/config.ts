@@ -17,6 +17,6 @@ export const useConfigStore = create<ConfigStore>()(
 			setDirection: (direction: 'ltr' | 'rtl') => set({ direction }),
 			setColorScheme: (colorScheme: ColorScheme) => set({ colorScheme }),
 		}),
-		{ name: 'config-storage' }
-	)
+		{ name: 'config-storage' },
+	),
 );

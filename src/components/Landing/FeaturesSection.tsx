@@ -1,14 +1,6 @@
 'use client';
 
-import {
-	Container,
-	Paper,
-	SimpleGrid,
-	Space,
-	Text,
-	ThemeIcon,
-	Title,
-} from '@mantine/core';
+import { Container, Paper, SimpleGrid, Space, Text, ThemeIcon, Title } from '@mantine/core';
 import {
 	IconBrandMantine,
 	IconBrandNextjs,
@@ -74,11 +66,7 @@ interface FeaturesGridProps {
 	data?: FeatureProps[];
 }
 
-export function FeaturesSection({
-	title,
-	description,
-	data = featuresData,
-}: FeaturesGridProps) {
+export function FeaturesSection({ title, description, data = featuresData }: FeaturesGridProps) {
 	const features = data.map((feature, index) => <Feature {...feature} key={index} />);
 
 	return (

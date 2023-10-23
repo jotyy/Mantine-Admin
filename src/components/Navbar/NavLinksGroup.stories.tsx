@@ -1,7 +1,7 @@
-import { navLinks } from '@/config';
 import type { Meta, StoryObj } from '@storybook/react';
-import { NavLinksGroup } from './NavLinksGroup';
 import { IconCalendarStats } from '@tabler/icons-react';
+import { navLinks } from '@/config';
+import { NavLinksGroup } from './NavLinksGroup';
 
 const meta: Meta<typeof NavLinksGroup> = {
 	title: 'Components/NavLinksGroup',

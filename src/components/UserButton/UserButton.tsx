@@ -14,9 +14,9 @@ export function UserButton({ image, name, email }: UserButtonProps) {
 				<Avatar src={image} radius="xl" />
 
 				<div style={{ flex: 1 }}>
-	<Text size="sm" w={500}>
-		{name}
-	</Text>
+					<Text size="sm" w={500}>
+						{name}
+					</Text>
 
 					<Text c="dimmed" size="xs">
 						{email}

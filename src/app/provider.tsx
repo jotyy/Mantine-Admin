@@ -1,7 +1,7 @@
 'use client';
 
-import { Analytics } from '@/components/Analytics/Analytics';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Analytics } from '@/components/Analytics/Analytics';
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const queryClient = new QueryClient();

@@ -1,8 +1,5 @@
 'use client';
 
-import { AdminHeader } from '@/components/Headers/AdminHeader';
-import { Navbar } from '@/components/Navbar/Navbar';
-import { navLinks } from '@/config';
 import {
 	AppShell,
 	Burger,
@@ -12,6 +9,9 @@ import {
 	useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { AdminHeader } from '@/components/Headers/AdminHeader';
+import { Navbar } from '@/components/Navbar/Navbar';
+import { navLinks } from '@/config';
 
 interface Props {
 	children: React.ReactNode;
@@ -37,9 +37,7 @@ export default function DashboardLayout({ children }: Props) {
 			</AppShell.Navbar>
 			<AppShell.Header>
 				<AdminHeader
-					burger={
-						<Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" mr="xl" />
-					}
+					burger={<Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" mr="xl" />}
 				/>
 			</AppShell.Header>
 			<AppShell.Main bg={bg}>{children}</AppShell.Main>

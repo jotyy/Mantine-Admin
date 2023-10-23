@@ -1,5 +1,5 @@
-import { navLinks } from '@/config';
 import type { Meta, StoryObj } from '@storybook/react';
+import { navLinks } from '@/config';
 import { Navbar } from './Navbar';
 
 const meta: Meta<typeof Navbar> = {

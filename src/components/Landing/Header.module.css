@@ -57,10 +57,7 @@
 	font-weight: 500;
 
 	&:hover {
-		background-color: lightdark(
-			var(--mantine-colors-dark-6),
-			var(--mantine-colors-gray-0)
-		);
+		background-color: lightdark(var(--mantine-colors-dark-6), var(--mantine-colors-gray-0));
 	}
 }
 

@@ -1,9 +1,9 @@
 'use client';
 
-import { Logo } from '@/components/Logo/Logo';
-import { Burger, Button, Center, Drawer, Group, Menu, Stack, rem } from '@mantine/core';
+import { Burger, Button, Center, Drawer, Group, Menu, rem, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
+import { Logo } from '@/components/Logo/Logo';
 import classes from './Header.module.css';
 
 interface HeaderActionProps {
@@ -13,24 +13,13 @@ interface HeaderActionProps {
 export function Header({ links }: HeaderActionProps) {
 	const [opened, { toggle }] = useDisclosure(false);
 	const items = links.map(link => {
-		const menuItems = link.links?.map(item => (
-			<Menu.Item key={item.link}>{item.label}</Menu.Item>
-		));
+		const menuItems = link.links?.map(item => <Menu.Item key={item.link}>{item.label}</Menu.Item>);
 
 		if (menuItems) {
 			return (
-				<Menu
-					key={link.label}
-					trigger="hover"
-					transitionProps={{ exitDuration: 0 }}
-					withinPortal
-				>
+				<Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
 					<Menu.Target>
-						<a
-							href={link.link}
-							className={classes.link}
-							onClick={event => event.preventDefault()}
-						>
+						<a href={link.link} className={classes.link} onClick={event => event.preventDefault()}>
 							<Center>
 								<span className={classes.linkLabel}>{link.label}</span>
 								<IconChevronDown size={rem(12)} stroke={1.5} />

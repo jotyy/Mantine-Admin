@@ -1,8 +1,8 @@
 'use client';
 
-import { useCustomTable } from '@/hooks/use-custom-table';
 import { Card, Title } from '@mantine/core';
-import { MRT_ColumnDef, MantineReactTable } from 'mantine-react-table';
+import { MantineReactTable, MRT_ColumnDef } from 'mantine-react-table';
+import { useCustomTable } from '@/hooks/use-custom-table';
 import classes from './Dashboard.module.css';
 
 type Block = {

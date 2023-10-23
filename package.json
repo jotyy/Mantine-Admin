@@ -81,6 +81,7 @@
 		"@storybook/addon-links": "^7.5.0",
 		"@storybook/blocks": "^7.5.0",
 		"@storybook/nextjs": "^7.5.0",
+		"@storybook/preview-api": "^7.5.0",
 		"@storybook/react": "^7.5.0",
 		"@storybook/testing-library": "^0.2.2",
 		"@tanstack/react-query-devtools": "^5.0.0",

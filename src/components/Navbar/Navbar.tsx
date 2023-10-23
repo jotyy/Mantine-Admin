@@ -12,7 +12,7 @@ interface Props {
 	hidden?: boolean;
 }
 
-export function Navbar({ data, hidden }: Props) {
+export function Navbar({ data }: Props) {
 	const links = data.map(item => <NavLinksGroup key={item.label} {...item} />);
 
 	return (

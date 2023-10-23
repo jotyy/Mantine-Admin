@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconCalendarStats } from '@tabler/icons-react';
-import { navLinks } from '@/config';
 import { NavLinksGroup } from './NavLinksGroup';
 
 const meta: Meta<typeof NavLinksGroup> = {

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconUser } from '@tabler/icons-react';
 import { UserButton } from './UserButton';
 
 const meta: Meta<typeof UserButton> = {

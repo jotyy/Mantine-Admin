@@ -1,13 +1,6 @@
 'use client';
 
-import {
-	AppShell,
-	Burger,
-	Container,
-	Text,
-	useMantineColorScheme,
-	useMantineTheme,
-} from '@mantine/core';
+import { AppShell, Burger, Text, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { AdminHeader } from '@/components/Headers/AdminHeader';
 import { Navbar } from '@/components/Navbar/Navbar';

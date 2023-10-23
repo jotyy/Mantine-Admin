@@ -4,6 +4,7 @@ import 'mantine-react-table/styles.css';
 import { ColorSchemeScript, DirectionProvider, MantineProvider } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
+import { Analytics } from '@vercel/analytics/react';
 import { quickSand } from '@/styles/fonts';
 import { AppProvider } from './provider';
 
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					<MantineProvider>
 						<ModalsProvider>
 							<AppProvider>{children}</AppProvider>
+							<Analytics />
 						</ModalsProvider>
 						<Notifications />
 					</MantineProvider>

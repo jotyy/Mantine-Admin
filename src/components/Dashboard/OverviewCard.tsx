@@ -1,4 +1,4 @@
-import { Card, Stack, Title } from '@mantine/core';
+import { Card, Title } from '@mantine/core';
 import {
 	CategoryScale,
 	Chart as ChartJS,

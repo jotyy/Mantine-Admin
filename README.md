@@ -81,6 +81,7 @@ This project features all the latest tools and good practices in web development
 
 ### Data Fetching
 
+- 🌴 **[ky](https://github.com/sindresorhus/ky)** - Tiny and elegant HTTP client based on the browser Fetch API
 - ✳️ **[React Query](https://tanstack.com/query)** – Hooks for fetching, caching and updating asynchronous data in React
 
 ### State Management and Hooks
@@ -407,8 +408,6 @@ See below the file tree to understand the project structure.
 ┃ ┃ ┣ 📃 babel.config.js        # Babel config with WDYR **
 ┃ ┃ ┗ 📃 wdyr.ts                # WDYR file **
 ┃ ┣ 📂 services/                # Services
-┃ ┃ ┣ 📂 global/
-┃ ┃ ┃ ┗ 📃 api.ts               # AXIOS config
 ┃ ┃ ┗ 📂 users/
 ┃ ┃   ┣ 📃 index.ts             # React Query Configuration
 ┃ ┃   ┗ 📃 keys.ts              # React Query Key

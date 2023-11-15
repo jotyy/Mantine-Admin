@@ -1,0 +1,12 @@
+.links {
+	flex: 1;
+}
+
+.linksInner {
+	padding-top: var(--mantine-spacing-xl);
+	padding-bottom: var(--mantine-spacing-xl);
+}
+
+.footer {
+	border-top: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}

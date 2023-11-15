@@ -1,5 +1,5 @@
+import { ImageResponse } from 'next/og';
 import { OGImage } from '@/components/OGImage/OGImage';
-import { ImageResponse } from 'next/server';
 // App router includes @vercel/og.
 // No need to install it.
 

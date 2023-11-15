@@ -1,13 +1,12 @@
 .vscode
 .husky
 .next
-/node_modules
-/.pnp
+node_modules
+.pnp
 .pnp.js
-/coverage
-/.next/
-/out/
-/build
+coverage
+out/
+build
 .DS_Store
 *.pem
 npm-debug.log*
@@ -20,3 +19,4 @@ yarn-error.log*
 .vercel
 public/*.js
 public/*.map
+*.js

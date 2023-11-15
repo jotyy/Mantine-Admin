@@ -1,0 +1,44 @@
+.control {
+	font-weight: 500;
+	display: block;
+	width: 100%;
+	padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+	color: lightdark(var(--mantine-colors-black), var(--mantine-colors-white));
+	font-size: var(--mantine-font-size-sm);
+	text-decoration: none;
+
+	&:hover {
+		background-color: lightdark(var(--mantine-colors-gray-1), var(--mantine-colors-gray-9));
+		color: lightdark(var(--mantine-colors-white), var(--mantine-colors-black));
+	}
+}
+
+.activeControl {
+	font-weight: 700;
+}
+
+.link {
+	font-weight: 500;
+	display: block;
+	text-decoration: none;
+	padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+	padding-left: var(--mantine-spacing-lg);
+	margin-left: var(--mantine-spacing-lg);
+	font-size: var(--mantine-font-size-sm);
+	color: lightdark(var(--mantine-colors-black), var(--mantine-colors-white));
+	border-left: 1px solid lightdark(var(--mantine-colors-dark-4), var(--mantine-colors-gray-3));
+
+	&:hover {
+		background-color: lightdark(var(--mantine-colors-gray-1), var(--mantine-colors-gray-9));
+		color: lightdark(var(--mantine-colors-white), var(--mantine-colors-black));
+	}
+}
+
+.activeLink {
+	background-color: lightdark(var(--mantine-colors-gray-1), var(--mantine-colors-gray-9));
+	color: lightdark(var(--mantine-colors-white), var(--mantine-colors-black));
+}
+
+.chevron {
+	transition: transform 200ms ease;
+}

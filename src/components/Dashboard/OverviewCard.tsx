@@ -1,10 +1,12 @@
-import { Card, Stack, Title } from '@mantine/core';
+'use client'
+
+import { Card, Title } from '@mantine/core';
 import {
 	CategoryScale,
 	Chart as ChartJS,
 	Legend,
-	LineElement,
 	LinearScale,
+	LineElement,
 	PointElement,
 	Tooltip,
 } from 'chart.js';
@@ -50,7 +52,11 @@ export function OverviewCard() {
 			radius="md"
 			w="100%"
 			h="100%"
-			sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+			style={{
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'space-between',
+			}}
 		>
 			<Title order={5}>Overview</Title>
 			<Line options={options} data={data} />

@@ -1,6 +1,6 @@
 'use client';
 
-import { Paper, TextInput, PasswordInput, Space, Button } from '@mantine/core';
+import { Button, Paper, PasswordInput, Space, TextInput } from '@mantine/core';
 
 export function RegisterForm() {
 	return (

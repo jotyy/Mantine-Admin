@@ -1,14 +1,4 @@
-'use client';
-
-import {
-	Anchor,
-	Breadcrumbs,
-	Container,
-	ContainerProps,
-	Space,
-	Title,
-	useMantineTheme,
-} from '@mantine/core';
+import { Anchor, Breadcrumbs, Container, ContainerProps, Space, Title } from '@mantine/core';
 import { FC, ReactNode } from 'react';
 
 type PageContainerProps = {
@@ -17,15 +7,7 @@ type PageContainerProps = {
 	items?: { label: string; href: string }[];
 } & Pick<ContainerProps, 'fluid'>;
 
-export const PageContainer: FC<PageContainerProps> = ({
-	children,
-	title,
-	items,
-	fluid = true,
-}) => {
-	const theme = useMantineTheme();
-	const titleColor = theme.colorScheme === 'dark' ? 'gray' : 'dark';
-
+export const PageContainer: FC<PageContainerProps> = ({ children, title, items, fluid = true }) => {
 	return (
 		<Container px={0} fluid={fluid}>
 			{items && items.length > 0 ? (
@@ -38,9 +20,7 @@ export const PageContainer: FC<PageContainerProps> = ({
 				</Breadcrumbs>
 			) : null}
 
-			<Title order={4} color={titleColor}>
-				{title}
-			</Title>
+			<Title order={4}>{title}</Title>
 
 			<Space h="lg" />
 

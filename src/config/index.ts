@@ -1,10 +1,5 @@
+import { IconComponents, IconDashboard, IconLock, IconMoodSmile } from '@tabler/icons-react';
 import { NavItem } from '@/types/nav-item';
-import {
-	IconComponents,
-	IconDashboard,
-	IconLock,
-	IconMoodSmile,
-} from '@tabler/icons-react';
 
 export const navLinks: NavItem[] = [
 	{ label: 'Dashboard', icon: IconDashboard, link: '/dashboard' },

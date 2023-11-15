@@ -1,0 +1,28 @@
+.wrapper {
+	padding-top: calc(var(--mantine-spacing-lg) * 4);
+	padding-bottom: calc(var(--mantine-spacing-lg) * 4);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	font-family: 'Greycliff CF', var(--mantine-font-family);
+	font-weight: 900;
+	line-height: 1.05;
+	font-size: rem(60px);
+	max-width: 100%;
+
+	@media (max-width: $mantine-breakpoint-md) {
+		font-size: rem(34px);
+		line-height: 1.15;
+	}
+}
+
+.description {
+	text-align: center;
+
+	@media (max-width: $mantine-breakpoint-sm) {
+		text-align: left;
+	}
+}

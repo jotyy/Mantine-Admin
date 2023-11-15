@@ -1,18 +1,15 @@
 'use client';
 
-import { ColorScheme, Group, Radio, useMantineColorScheme } from '@mantine/core';
-import { useState } from 'react';
+import { Group, MantineColorScheme, Radio, useMantineColorScheme } from '@mantine/core';
 
 export const ThemeSwitcher = () => {
-	const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-	const [themeValue, setThemeValue] = useState(colorScheme);
+	const { colorScheme, setColorScheme } = useMantineColorScheme();
 
 	return (
 		<Radio.Group
-			value={themeValue}
-			onChange={(value: ColorScheme) => {
-				setThemeValue(value);
-				toggleColorScheme(value);
+			value={colorScheme}
+			onChange={(value) => {
+				setColorScheme(value as MantineColorScheme);
 			}}
 			name="theme"
 			label="Theme Mode"

@@ -1,12 +1,11 @@
 'use client';
 
+import { Badge, Paper, Rating, Space, Title } from '@mantine/core';
+import { MantineReactTable, MRT_ColumnDef } from 'mantine-react-table';
+import { useMemo } from 'react';
 import { useCustomTable } from '@/hooks/use-custom-table';
 import { useProducts } from '@/services/products';
 import { Product } from '@/services/products/types';
-import { Badge, Paper, Rating, Space, Title } from '@mantine/core';
-import { MRT_ColumnDef, MantineReactTable } from 'mantine-react-table';
-
-import { useMemo } from 'react';
 
 export function PaginationTable() {
 	const { data, isError, isFetching, isLoading } = useProducts();
@@ -55,10 +54,10 @@ export function PaginationTable() {
 				},
 			},
 		],
-		[]
+		[],
 	);
 
-	const table = useCustomTable({
+	const table = useCustomTable<Product>({
 		columns,
 		data: data ?? [],
 		rowCount: data?.length ?? 0,

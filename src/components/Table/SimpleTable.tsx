@@ -1,6 +1,6 @@
 'use client';
 
-import { Paper, Space, Stack, Title } from '@mantine/core';
+import { Paper, Space, Title } from '@mantine/core';
 import { MantineReactTable, MRT_ColumnDef } from 'mantine-react-table';
 import { useMemo } from 'react';
 
@@ -88,7 +88,7 @@ export const SimpleTable = () => {
 				header: 'State',
 			},
 		],
-		[]
+		[],
 	);
 
 	return (

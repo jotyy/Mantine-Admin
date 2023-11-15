@@ -9,7 +9,7 @@
 
 <!-- Banner Section -->
 <p align="center">
-  <img src="https://mantine-admin.vercel.app/opengraph-image?fa8e5bee628673a0" alt="Mantine Admin Banner" width="512px" />
+  <img src="./public/static/images/og.png" alt="Mantine Admin Banner" width="600px" />
 </p>
 <h3 align="center">
   💻 A Modern Dashboard with Next.js.!
@@ -81,6 +81,7 @@ This project features all the latest tools and good practices in web development
 
 ### Data Fetching
 
+- 🌴 **[ky](https://github.com/sindresorhus/ky)** - Tiny and elegant HTTP client based on the browser Fetch API
 - ✳️ **[React Query](https://tanstack.com/query)** – Hooks for fetching, caching and updating asynchronous data in React
 
 ### State Management and Hooks
@@ -91,7 +92,6 @@ This project features all the latest tools and good practices in web development
 ### Design System and Animations
 
 - 🎨 **[Mantine-UI](https://mantine.dev)** – A simple, modular and accessible component library that gives you the building blocks to build your React applications
-- 🎞️ **[Framer Motion](https://www.framer.com/motion)** – A production-ready motion library for React
 - ✨ **[Tabler Icons](https://tabler-icons-react.vercel.app)** – A collection of popular icons to React projects
 
 ### Form Validation
@@ -119,7 +119,6 @@ This project features all the latest tools and good practices in web development
 
 ### Additional Plugins
 
-- 🗃️ **[next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins)** – Provides a cleaner API for enabling and configuring plugins for Next.js
 - 🎉 **[Partytown](https://partytown.builder.io/)** – Relocate resource intensive third-party scripts off of the main thread and into a web worker
 
 <!-- Procedures Section -->
@@ -398,10 +397,9 @@ See below the file tree to understand the project structure.
 ┃ ┃ ┗ 📂 translations/          # Translations folder **
 ┃ ┣ 📃 favicon.ico              # Icon tab browser
 ┣ 📂 src/
-┃ ┣ 📂 animations/              # Framer Motion Animations **
 ┃ ┣ 📂 app/                   # App pages
 ┃ ┣ 📂 components/              # App Components
-┃ ┃ ┗ 📂 Motion/                # Mantine-UI + Framer components **
+┃ ┃ ┗ 📂 Motion/                # Mantine-UI components **
 ┃ ┣ 📂 hooks/                   # React Hooks **
 ┃ ┃ ┗ 📃 useFetch.ts            # SWR fetch hook (optional) **
 ┃ ┣ 📂 interfaces/              # TypeScript Interfaces
@@ -409,8 +407,6 @@ See below the file tree to understand the project structure.
 ┃ ┃ ┣ 📃 babel.config.js        # Babel config with WDYR **
 ┃ ┃ ┗ 📃 wdyr.ts                # WDYR file **
 ┃ ┣ 📂 services/                # Services
-┃ ┃ ┣ 📂 global/
-┃ ┃ ┃ ┗ 📃 api.ts               # AXIOS config
 ┃ ┃ ┗ 📂 users/
 ┃ ┃   ┣ 📃 index.ts             # React Query Configuration
 ┃ ┃   ┗ 📃 keys.ts              # React Query Key

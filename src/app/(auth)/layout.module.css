@@ -1,0 +1,9 @@
+.wrapper {
+	width: 100%;
+	height: 100vh;
+	color: lightdark(var(--mantine-colors-dark), var(--mantine-colors-white));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}

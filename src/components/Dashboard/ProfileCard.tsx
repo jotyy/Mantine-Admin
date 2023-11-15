@@ -8,43 +8,36 @@ import {
 	Flex,
 	Group,
 	Menu,
+	rem,
 	Space,
 	Stack,
 	Text,
 	Title,
-	createStyles,
-	rem,
 } from '@mantine/core';
 import { IconDots, IconEye, IconFileZip, IconTrash } from '@tabler/icons-react';
 
-const useStyle = createStyles(theme => ({
-	section: {
-		padding: theme.spacing.md,
-		borderTop: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-		}`,
-	},
-}));
+const sectionStyle = {
+	padding: 'var(--mantine-spacing-md)',
+	borderTop: '1px solid lightdark(var(--mantine-colors-gray-3), var(--mantine-colors-dark-4))',
+};
 
 export function ProfileCard() {
-	const { classes } = useStyle();
-
 	return (
 		<Card radius="md">
-			<Card.Section className={classes.section}>
-				<Group position="apart">
+			<Card.Section style={sectionStyle}>
+				<Group justify="space-between">
 					<Avatar radius="xl"></Avatar>
 					<Menu withinPortal position="bottom-end" shadow="sm">
 						<Menu.Target>
-							<ActionIcon>
+							<ActionIcon variant="subtle">
 								<IconDots size="1rem" />
 							</ActionIcon>
 						</Menu.Target>
 
 						<Menu.Dropdown>
-							<Menu.Item icon={<IconFileZip size={rem(14)} />}>Action One</Menu.Item>
-							<Menu.Item icon={<IconEye size={rem(14)} />}>Action Two</Menu.Item>
-							<Menu.Item icon={<IconTrash size={rem(14)} />} color="red">
+							<Menu.Item leftSection={<IconFileZip size={rem(14)} />}>Action One</Menu.Item>
+							<Menu.Item leftSection={<IconEye size={rem(14)} />}>Action Two</Menu.Item>
+							<Menu.Item leftSection={<IconTrash size={rem(14)} />} color="red">
 								Action Three
 							</Menu.Item>
 						</Menu.Dropdown>
@@ -68,15 +61,15 @@ export function ProfileCard() {
 				</Flex>
 			</Card.Section>
 
-			<Card.Section className={classes.section}>
-				<Group position="apart" grow>
-					<Stack spacing={4}>
+			<Card.Section style={sectionStyle}>
+				<Group grow>
+					<Stack gap={4}>
 						<Text fz="sm" fw="500">
 							Balance
 						</Text>
 						<Title order={3}>$9821</Title>
 					</Stack>
-					<Stack spacing={4}>
+					<Stack gap={4}>
 						<Text fz="sm" fw="500">
 							Chain
 						</Text>
@@ -85,8 +78,8 @@ export function ProfileCard() {
 				</Group>
 			</Card.Section>
 
-			<Card.Section className={classes.section}>
-				<Group position="center">
+			<Card.Section style={sectionStyle}>
+				<Group>
 					<Button variant="light">Deposit</Button>
 					<Button>Buy/Sell</Button>
 				</Group>

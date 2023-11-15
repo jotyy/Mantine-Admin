@@ -1,40 +1,12 @@
 'use client';
 
-import {
-	Button,
-	Card,
-	Group,
-	Select,
-	Space,
-	Stack,
-	Text,
-	Title,
-	createStyles,
-	rem,
-} from '@mantine/core';
+import { Button, Card, Group, rem, Select, Space, Stack, Text, Title } from '@mantine/core';
 import { IconArrowRight, IconArrowUp } from '@tabler/icons-react';
-
-const useStyle = createStyles(theme => ({
-	section: {
-		padding: theme.spacing.md,
-		borderTop: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-		}`,
-
-		display: 'flex',
-		flexDirection: 'row',
-		gap: theme.spacing.md,
-		justifyContent: 'space-between',
-
-		[theme.fn.smallerThan('md')]: {
-			flexDirection: 'column',
-		},
-	},
-}));
+import classes from './Dashboard.module.css';
 
 const BalanceLeftStack = () => (
-	<Stack spacing="md" style={{ flex: 1 }}>
-		<Stack spacing={4}>
+	<Stack gap="md" style={{ flex: 1 }}>
+		<Stack gap={4}>
 			<Text size="xs" c="gray.6">
 				Availabel Balance
 			</Text>
@@ -49,20 +21,20 @@ const BalanceLeftStack = () => (
 		</Stack>
 
 		<Group>
-			<Stack spacing={2}>
+			<Stack gap={2}>
 				<Text size="sm" c="gray.6">
 					Income
 				</Text>
 				<Title order={5}>$ 5729.28</Title>
 			</Stack>
-			<Stack spacing={2}>
+			<Stack gap={2}>
 				<Text size="sm" c="gray.6">
 					Expense
 				</Text>
 				<Title order={5}>$ 1329.89</Title>
 			</Stack>
 		</Group>
-		<Button size="sm" w={rem(140)} rightIcon={<IconArrowRight size={14} />}>
+		<Button size="sm" w={rem(140)} rightSection={<IconArrowRight size={14} />}>
 			View more
 		</Button>
 	</Stack>
@@ -70,7 +42,7 @@ const BalanceLeftStack = () => (
 
 const BalanceRightStack = () => (
 	<Stack style={{ flex: 1 }}>
-		<Stack align="start" spacing={2}>
+		<Stack align="start" gap={2}>
 			<Text size="sm" c="gray.6">
 				Etherum
 			</Text>
@@ -81,7 +53,7 @@ const BalanceRightStack = () => (
 				</Text>
 			</Title>
 		</Stack>
-		<Stack align="start" spacing={2}>
+		<Stack align="start" gap={2}>
 			<Text size="sm" c="gray.6">
 				Bitcoin
 			</Text>
@@ -92,7 +64,7 @@ const BalanceRightStack = () => (
 				</Text>
 			</Title>
 		</Stack>
-		<Stack align="start" spacing={2}>
+		<Stack align="start" gap={2}>
 			<Text size="sm" c="gray.6">
 				Doge
 			</Text>
@@ -107,8 +79,6 @@ const BalanceRightStack = () => (
 );
 
 export function BalanceCard() {
-	const { classes } = useStyle();
-
 	return (
 		<Card radius="md">
 			<Card.Section className={classes.section}>
@@ -116,7 +86,6 @@ export function BalanceCard() {
 				<Select
 					value="march"
 					size="xs"
-					withinPortal
 					data={[
 						{ value: 'march', label: 'March' },
 						{ value: 'april', label: 'April' },

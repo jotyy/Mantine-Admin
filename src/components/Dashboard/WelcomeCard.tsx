@@ -1,4 +1,6 @@
-import { Card, Title, Space, List, ThemeIcon, Text } from '@mantine/core';
+'use client'
+
+import { Card, List, Space, Text, ThemeIcon, Title } from '@mantine/core';
 import { IconCircleCheck } from '@tabler/icons-react';
 
 export function WelcomeCard() {

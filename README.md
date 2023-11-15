@@ -9,7 +9,7 @@
 
 <!-- Banner Section -->
 <p align="center">
-  <img src="./public/static/images/banner.png" alt="Mantine Admin Banner" width="512px" />
+  <img src="./public/static/images/og.png" alt="Mantine Admin Banner" width="600px" />
 </p>
 <h3 align="center">
   💻 A Modern Dashboard with Next.js.!
@@ -119,7 +119,6 @@ This project features all the latest tools and good practices in web development
 
 ### Additional Plugins
 
-- 🗃️ **[next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins)** – Provides a cleaner API for enabling and configuring plugins for Next.js
 - 🎉 **[Partytown](https://partytown.builder.io/)** – Relocate resource intensive third-party scripts off of the main thread and into a web worker
 
 <!-- Procedures Section -->

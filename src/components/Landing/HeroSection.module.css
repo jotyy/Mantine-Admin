@@ -21,8 +21,8 @@
 }
 
 .title {
-	font-family: 'Greycliff CF', var(--mantine-font-family);
-	font-weight: 900;
+	font-family: "Work Sans", sans-serif;
+	font-weight: 800;
 	line-height: 1.05;
 	font-size: rem(64px);
 	max-width: 100%;
@@ -36,8 +36,6 @@
 
 .subtitle {
 	padding-top: var(--mantine-spacing-xl);
-	font-family: 'Greycliff CF', var(--mantine-font-family);
-	font-weight: 800;
 	line-height: 1.05;
 	font-size: rem(40px);
 	max-width: 100%;
@@ -61,7 +59,6 @@
 .control {
 	padding-left: rem(40px);
 	padding-right: rem(40px);
-	font-family: 'Greycliff CF', var(--mantine-font-family);
 	font-size: rem(18px);
 
 	@media (max-width: $mantine-breakpoint-md) {

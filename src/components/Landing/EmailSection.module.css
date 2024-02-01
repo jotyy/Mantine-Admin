@@ -35,7 +35,6 @@
 
 .title {
 	color: lightdark(var(--mantine-colors-black), var(--mantine-colors-white));
-	font-family: 'Greycliff CF', var(--mantine-font-family);
 	line-height: 1;
 	margin-bottom: var(--mantine-spacing-sm);
 }

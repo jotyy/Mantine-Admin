@@ -8,7 +8,6 @@ import {
 	Flex,
 	Group,
 	Menu,
-	rem,
 	Space,
 	Stack,
 	Text,
@@ -35,9 +34,9 @@ export function ProfileCard() {
 						</Menu.Target>
 
 						<Menu.Dropdown>
-							<Menu.Item leftSection={<IconFileZip size={rem(14)} />}>Action One</Menu.Item>
-							<Menu.Item leftSection={<IconEye size={rem(14)} />}>Action Two</Menu.Item>
-							<Menu.Item leftSection={<IconTrash size={rem(14)} />} color="red">
+							<Menu.Item leftSection={<IconFileZip size={14} />}>Action One</Menu.Item>
+							<Menu.Item leftSection={<IconEye size={14} />}>Action Two</Menu.Item>
+							<Menu.Item leftSection={<IconTrash size={14} />} color="red">
 								Action Three
 							</Menu.Item>
 						</Menu.Dropdown>

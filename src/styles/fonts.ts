@@ -1,3 +1,4 @@
+import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 
 const quickSand = localFont({
@@ -24,10 +25,16 @@ const quickSand = localFont({
 		},
 		{
 			path: './quicksand/Quicksand-Bold.ttf',
-			weight: '700',
+			weight: '800',
 			style: 'normal',
 		},
 	],
 });
 
-export { quickSand };
+const inter = Inter({
+	subsets: ['latin'],
+	display: 'swap',
+	weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
+});
+
+export { quickSand, inter };

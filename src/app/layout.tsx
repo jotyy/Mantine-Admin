@@ -5,7 +5,7 @@ import { ColorSchemeScript, DirectionProvider, MantineProvider } from '@mantine/
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { Analytics } from '@vercel/analytics/react';
-import { quickSand } from '@/styles/fonts';
+import { inter } from '@/styles/fonts';
 import { theme } from '@/styles/theme';
 import { AppProvider } from './provider';
 
@@ -35,7 +35,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en-US" className={quickSand.className}>
+		<html lang="en-US">
 			<head>
 				<ColorSchemeScript />
 				<meta
@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
 				/>
 			</head>
-			<body>
+			<body className={inter.className}>
 				<DirectionProvider>
 					<MantineProvider theme={theme}>
 						<ModalsProvider>

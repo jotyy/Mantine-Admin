@@ -10,7 +10,7 @@ interface UserButtonProps extends UnstyledButtonProps {
 export function UserButton({ image, name, email }: UserButtonProps) {
 	return (
 		<UnstyledButton className={classes.user}>
-			<Flex>
+			<Flex direction="row" gap={8}>
 				<Avatar src={image} radius="xl" />
 
 				<div style={{ flex: 1 }}>

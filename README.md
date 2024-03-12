@@ -117,10 +117,6 @@ This project features all the latest tools and good practices in web development
 
 - 🕵🏻‍♂️ **[why-did-you-render](https://github.com/welldone-software/why-did-you-render)** (optional) – Notify you about potentially avoidable re-renders
 
-### Additional Plugins
-
-- 🎉 **[Partytown](https://partytown.builder.io/)** – Relocate resource intensive third-party scripts off of the main thread and into a web worker
-
 <!-- Procedures Section -->
 
 ## ▶️ Getting Started

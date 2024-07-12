@@ -1,6 +1,4 @@
 {
-	// * https://nextjs.org/docs/advanced-features/debugging#debugging-with-vs-code
-
   "version": "0.2.0",
   "configurations": [
     {
@@ -9,12 +7,12 @@
       "request": "launch",
       "command": "npm run dev"
     },
-		{
-			"name": "Next.js: debug client-side (Edge)",
-			"type": "pwa-msedge",
-			"request": "launch",
-			"url": "http://localhost:3000"
-		},
+    {
+      "name": "Next.js: debug client-side (Edge)",
+      "type": "pwa-msedge",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    },
     {
       "name": "Next.js: debug client-side (Chrome)",
       "type": "pwa-chrome",

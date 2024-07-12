@@ -1,12 +1,12 @@
 {
-	"recommendations": [
-		"formulahendry.auto-complete-tag",
-		"aaron-bond.better-comments",
-		"mikestead.dotenv",
-		"EditorConfig.EditorConfig",
-		"usernamehw.errorlens",
-		"dbaeumer.vscode-eslint",
-		"esbenp.prettier-vscode",
-		"meganrogge.template-string-converter"
-	],
+  "recommendations": [
+    "formulahendry.auto-complete-tag",
+    "aaron-bond.better-comments",
+    "mikestead.dotenv",
+    "EditorConfig.EditorConfig",
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "meganrogge.template-string-converter"
+  ]
 }

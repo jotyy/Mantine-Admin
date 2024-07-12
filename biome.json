@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "organizeImports": {
+    "ignore": [".next"],
+    "enabled": true
+  },
+  "linter": {
+    "ignore": [".next", "components/ui"],
+    "rules": {
+      "correctness": {
+        "useExhaustiveDependencies": "off"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off",
+        "noExplicitAny": "off"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      }
+    }
+  },
+  "formatter": {
+    "ignore": [".next", "components/ui"],
+    "indentStyle": "space",
+    "enabled": true
+  }
+}

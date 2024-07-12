@@ -145,7 +145,6 @@ $ cd <NAME-OF-YOUR-GENERATED-REPOSITORY>
 >
 > - [PNPM](https://pnpm.io/pt/cli/add)(Recommand)
 > - [NPM](https://docs.npmjs.com/cli/v6/commands)
-> - [Yarn](https://classic.yarnpkg.com/en/docs/cli)
 
 Install all dependencies of the project:
 
@@ -154,8 +153,6 @@ Install all dependencies of the project:
 $ pnpm install
 # NPM
 $ npm install
-# Yarn
-$ yarn install
 ```
 
 ### ⌨️ Development
@@ -167,8 +164,6 @@ Once all dependencies have been installed, you can run the local development ser
 $ pnpm dev
 # NPM
 $ npm run dev
-# Yarn
-$ yarn dev
 ```
 
 Now just code!
@@ -184,8 +179,6 @@ Make a production build:
 $ pnpm build
 # NPM
 $ npm run build
-# Yarn
-$ yarn build
 ```
 
 And then run the build:
@@ -195,8 +188,6 @@ And then run the build:
 $ pnpm start
 # NPM
 $ npm start
-# Yarn
-$ yarn start
 ```
 
 <details>
@@ -209,8 +200,6 @@ $ yarn start
 $ pnpm run lint
 # NPM
 $ npm run lint
-# Yarn
-$ yarn lint
 ```
 
  <h4>Lint and Fix</h4>
@@ -220,8 +209,6 @@ $ yarn lint
 $ pnpm run lint:fix
 # NPM
 $ npm run lint:fix
-# Yarn
-$ yarn lint:fix
 ```
 
  <h4>Test</h4>
@@ -231,8 +218,6 @@ $ yarn lint:fix
 $ pnpm run test # or pnpm run test:watch
 # NPM
 $ npm run test # or npm run test:watch
-# Yarn
-$ yarn test # or yarn test:watch
 ```
 
  <h4>Type Checking</h4>
@@ -242,8 +227,6 @@ $ yarn test # or yarn test:watch
 $ pnpm run type-check
 # NPM
 $ npm run type-check
-# Yarn
-$ yarn type-check
 ```
 
  <h4>Format</h4>
@@ -253,8 +236,6 @@ $ yarn type-check
 $ pnpm run format
 # NPM
 $ npm run format
-# Yarn
-$ yarn format
 ```
 
  <h4>Interactive Update Tool</h4>
@@ -264,8 +245,6 @@ $ yarn format
 $ pnpm run up
 # NPM
 $ npm run up
-# Yarn
-$ yarn up
 ```
 
  <h4>Update All Dependencies</h4>
@@ -275,8 +254,6 @@ $ yarn up
 $ pnpm run up-latest
 # NPM
 $ npm run up-latest
-# Yarn
-$ yarn up-latest
 ```
 
  <h4>Release As Major Version</h4>
@@ -286,8 +263,6 @@ $ yarn up-latest
 $ pnpm run release-as-major
 # NPM
 $ npm run release-as-major
-# Yarn
-$ yarn release-as-major
 ```
 
  <h4>Release As Minor Version</h4>
@@ -297,8 +272,6 @@ $ yarn release-as-major
 $ pnpm run release-as-minor
 # NPM
 $ npm run release-as-minor
-# Yarn
-$ yarn release-as-minor
 ```
 
  <h4>Release As Patch Version</h4>
@@ -308,8 +281,6 @@ $ yarn release-as-minor
 $ pnpm run release-as-patch
 # NPM
 $ npm run release-as-patch
-# Yarn
-$ yarn release-as-patch
 ```
 
  <h4>Publish Release</h4>
@@ -319,8 +290,6 @@ $ yarn release-as-patch
 $ pnpm run push-release
 # NPM
 $ npm run push-release
-# Yarn
-$ yarn push-release
 ```
 
  <h4>Get Updates From Remote and Maintain Current Changes</h4>
@@ -330,8 +299,6 @@ $ yarn push-release
 $ pnpm run pull
 # NPM
 $ npm run pull
-# Yarn
-$ yarn pull
 ```
 
 </details>
@@ -358,8 +325,6 @@ Just delete the `babel.config.js` and `wdyr.ts` files, remove `wdyr` import line
 $ pnpm uninstall @welldone-software/why-did-you-render
 # NPM
 $ npm uninstall @welldone-software/why-did-you-render
-# Yarn
-$ yarn remove @welldone-software/why-did-you-render
 ```
 
 </details>

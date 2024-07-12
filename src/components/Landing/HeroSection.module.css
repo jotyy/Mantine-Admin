@@ -21,7 +21,6 @@
 }
 
 .title {
-	font-family: "Work Sans", sans-serif;
 	font-weight: 800;
 	line-height: 1.05;
 	font-size: rem(64px);
@@ -37,7 +36,7 @@
 .subtitle {
 	padding-top: var(--mantine-spacing-xl);
 	line-height: 1.05;
-	font-size: rem(40px);
+	font-size: rem(36px);
 	max-width: 100%;
 
 	@media (max-width: $mantine-breakpoint-md) {
@@ -48,8 +47,7 @@
 }
 
 .description {
-	opacity: 0.75;
-	max-width: rem(500px);
+	max-width: rem(400px);
 
 	@media (min-width: $mantine-breakpoint-md) {
 		max-width: 100%;

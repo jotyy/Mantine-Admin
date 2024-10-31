@@ -10,13 +10,17 @@ export const navLinks: NavItem[] = [
   { label: "Dashboard", icon: IconDashboard, link: "/dashboard" },
 
   {
-    label: "Components",
+    label: "Main Menu",
     icon: IconComponents,
     initiallyOpened: true,
     links: [
       {
-        label: "Table",
-        link: "/dashboard/table",
+        label: "Products",
+        link: "/dashboard/products",
+      },
+      {
+        label: "Collections",
+        link: "/dashboard/collections",
       },
       {
         label: "Form",

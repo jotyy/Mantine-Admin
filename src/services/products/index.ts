@@ -3,13 +3,15 @@ import ky from "ky";
 import type { Product } from "./types";
 
 export const getProducts = async () => {
-  const res = await ky.get("/mock/products.json").json<{ data: Product[] }>();
+	const res = await ky
+		.get("http://localhost:3002/products")
+		.json<{ docs: any }>();
 
-  return res.data;
+	return res.docs;
 };
 
 export const useProducts = () =>
-  useQuery<Product[]>({
-    queryKey: ["products"],
-    queryFn: () => getProducts(),
-  });
+	useQuery<Product[]>({
+		queryKey: ["products"],
+		queryFn: () => getProducts(),
+	});

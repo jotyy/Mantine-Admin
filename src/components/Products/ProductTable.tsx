@@ -17,7 +17,7 @@ import { useProducts } from "@/services/products";
 import type { Product } from "@/services/products/types";
 import { useRouter } from "next/navigation";
 
-export function PaginationTable() {
+export function ProductTable() {
 	const { data, isError, isFetching, isLoading } = useProducts();
 	const router = useRouter();
 

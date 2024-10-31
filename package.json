@@ -1,7 +1,7 @@
 {
-  "name": "mantine-admin",
+  "name": "viking-admin",
   "version": "1.0.0",
-  "author": "Joshua Lee <jotyy318@gmail.com>",
+  "author": "Trang Le <treomang@gmail.com>",
   "description": "A Modern Admin Dashboard made with Mantine/React/NextJS!",
   "lint-staged": {
     ".": ["bun run lint"]

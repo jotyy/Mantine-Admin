@@ -15,7 +15,7 @@ import { AppProvider } from "./provider";
 
 export const metadata = {
   metadataBase: new URL("https://mantine-admin.vercel.app/"),
-  title: { default: "Mantine Admin", template: "%s | Mantine Admin" },
+  title: { default: "Viking Admin", template: "%s | Viking Admin" },
   description: "A Modern Dashboard with Next.js.",
   keywords: [
     "Next.js",

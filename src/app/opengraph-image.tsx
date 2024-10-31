@@ -5,7 +5,7 @@ import { OGImage } from "@/components/OGImage/OGImage";
 
 export const runtime = "edge";
 
-export const alt = "Mantine Admin";
+export const alt = "Viking Admin";
 export const size = {
   width: 1200,
   height: 630,
